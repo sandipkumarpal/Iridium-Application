@@ -3,7 +3,7 @@ import { Component } from '@angular/core';
 @Component({
     selector: 'app-procedure',
     templateUrl: './procedure.component.html',
-    styleUrls: ['./procedure.component.css']
+    styleUrls: ['./procedure.component.scss']
 })
 
 export class ProcedureComponent {}

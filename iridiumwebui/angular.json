@@ -23,7 +23,7 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css"
+              "src/scss/styles.scss"
             ],
             "scripts": [
               "./node_modules/jquery/dist/jquery.min.js"
@@ -125,5 +125,10 @@
       }
     }
   },
-  "defaultProject": "iridiumwebui"
+  "defaultProject": "iridiumwebui",
+  "schematics": {
+    "@schematics/angular:component": {
+      "styleext": "scss"
+    }
+  }
 }
