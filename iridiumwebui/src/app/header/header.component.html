@@ -1,11 +1,16 @@
-<ul>
-    <li routerLinkActive="active current"><a routerLink="">Home</a></li>
-    <li routerLinkActive="active current"><a routerLink="/intro">Intro</a></li>
-    <li routerLinkActive="active current"><a routerLink="/about">About</a></li>
-    <li routerLinkActive="active current"><a routerLink="/drdo">Drdo</a></li>
-    <li routerLinkActive="active current"><a routerLink="/feedback">FeedBack</a></li>
-    <li routerLinkActive="active current"><a routerLink="/gallery">Gallery</a></li>
-    <li routerLinkActive="active current"><a routerLink="/iridium">Iridium</a></li>
-    <li routerLinkActive="active current"><a routerLink="/procedure">Procedure</a></li>
-    <li routerLinkActive="active current"><a routerLink="/contact">Contact</a></li>
-</ul>
+<header class="header">
+    <app-logo></app-logo>
+    <span 
+        class="btn-floating btn-large waves-effect waves-light header-menu"
+        (click)="toggle()"
+        [class.menuButton-active]="showMenu"
+    >
+        <i *ngIf="!showMenu; else elseBlock" class="material-icons left">dehaze</i>
+        <ng-template #elseBlock>
+            <i class="material-icons left">close</i>
+        </ng-template>
+    </span>
+</header>
+<div class="navigation" *ngIf="showMenu">
+    <app-navigation></app-navigation>
+</div>

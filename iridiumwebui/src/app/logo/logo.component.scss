@@ -1,0 +1,17 @@
+@import '../../scss/mixine.scss';
+
+.logo {
+    display: inline-block;
+    vertical-align: top;
+    margin: 0;
+    @include rem(max-width, 96);
+
+    a {
+        display: block;
+    }
+
+    img {
+        max-width: 100%;
+        height: auto;
+    }
+}

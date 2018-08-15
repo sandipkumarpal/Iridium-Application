@@ -1,0 +1,20 @@
+@import '../../scss/mixine.scss';
+
+.header {
+    @include overlay-block(absolute, 0, 0, 0, inherit);
+    .header-menu {
+        position: fixed;
+        top: 20px;
+        right: 20px;
+    }
+}
+
+.navigation {
+    background-color: #0036ab;
+    @include overlay-block(absolute, 0, 0, 0, 0);
+}
+.menuButton-active {
+    position: absolute;
+    z-index: 1;
+}
+

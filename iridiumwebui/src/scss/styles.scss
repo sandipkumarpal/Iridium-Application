@@ -1,5 +1,18 @@
 /* You can add global styles to this file, and also import other style files */
-$color: #555;
+@import 'variable.scss';
+@import 'font.scss';
+@import 'mixine.scss';
+
+html {
+    font-size: $theme_default_size;
+}
+html,
 body {
-    background-color: $color;
+    height: 100%;
+}
+
+body {
+    font-family: 'robotoregular', sans-serif;
+    background-color: $theme_background_dark;
+    @include fontSize(16px);
 }

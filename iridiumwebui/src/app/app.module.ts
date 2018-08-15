@@ -1,6 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AngularFontAwesomeModule } from 'angular-font-awesome';
+
 
 import { AppComponent } from './app.component';
 import { LoaderComponent } from './loader/loader.component';
@@ -14,7 +16,9 @@ import { FeedbackComponent } from './feedback/feedback.component';
 import { GalleryComponent } from './gallery/gallery.component';
 import { IridiumComponent } from './iridium/iridium.component';
 import { ProcedureComponent } from './procedure/procedure.component';
+import { NavigationComponent } from './nvaigation/navigation.component';
 import { NotFoundComponent } from './notfound/notfound.component';
+import { LogoComponent } from './logo/logo.component';
 
 @NgModule({
   declarations: [
@@ -31,9 +35,12 @@ import { NotFoundComponent } from './notfound/notfound.component';
     IridiumComponent,
     ProcedureComponent,
     NotFoundComponent,
+    NavigationComponent,
+    LogoComponent,
   ],
   imports: [
     BrowserModule,
+    AngularFontAwesomeModule,
     RouterModule.forRoot([
       { path: '', component: HomeComponent },
       { path: 'intro', component: IntroComponent },

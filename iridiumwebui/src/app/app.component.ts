@@ -12,6 +12,6 @@ export class AppComponent implements OnInit {
   ngOnInit() {
     setInterval(() => {
       this.loader = false;
-    }, 5000);
+    }, 1000);
   }
 }

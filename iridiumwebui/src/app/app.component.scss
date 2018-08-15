@@ -1,0 +1,8 @@
+@import '../scss/variable.scss';
+@import '../scss/mixine.scss';
+// @import '../scss/font.scss';
+
+.page {
+    @include rem(margin, 0 100 0 0);
+    background-color: $theme_background_light;
+}

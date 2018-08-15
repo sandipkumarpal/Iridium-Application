@@ -1,0 +1,56 @@
+@import 'variable.scss';
+@mixin aButton($background, $hover, $link, $colorText, $radius, $padding, $margin) {
+    a {
+       background-color: $background;
+       color: $colorText;
+       border-radius: $radius;
+       margin: $margin;
+       padding: $padding;
+
+       &:hover {
+          color: $hover;
+       }
+ 
+       &:visited {
+          color: $link;
+       }
+    }
+ }
+@function calculateRem( $size ) {
+    $remSize: $size / $theme_default_size;
+    @return #{$remSize}rem;
+}
+@mixin fontSize($size) {
+    font-size: $size;
+    font-size: calculateRem($size);
+}
+
+@mixin border-radius($radius) {
+    -webkit-border-radius: $radius;
+       -moz-border-radius: $radius;
+        -ms-border-radius: $radius;
+            border-radius: $radius;
+  }
+
+  @mixin overlay-block($position, $top, $left, $right, $bottom) {
+    position: $position;
+    top: $top;
+    left: $left;
+    right: $right;
+    bottom: $bottom;
+  }
+
+  @mixin rem($property, $px: $basefontsize) {
+
+    $pxvalues: null;
+    $remvalues: null;
+
+    @each $pxvalue in $px {
+        $pxvalues: append($pxvalues, ($pxvalue)+px);
+	$remvalues: append($remvalues, ($pxvalue/$basefontsize)+rem);
+    }
+
+	#{$property}: $pxvalues;
+	#{$property}: $remvalues;
+
+}
