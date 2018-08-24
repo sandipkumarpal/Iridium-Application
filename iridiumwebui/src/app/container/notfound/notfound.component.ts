@@ -6,4 +6,6 @@ import { Component } from '@angular/core';
     styleUrls: ['./notfound.component.scss']
 })
 
-export class NotFoundComponent {}
+export class NotFoundComponent {
+    titlemessage : string = "Not Found";
+}

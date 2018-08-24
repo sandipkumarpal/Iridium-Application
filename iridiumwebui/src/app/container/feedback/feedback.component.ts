@@ -6,4 +6,7 @@ import { Component } from '@angular/core';
     styleUrls: ['./feedback.component.scss']
 })
 
-export class FeedbackComponent {}
+export class FeedbackComponent {
+    titlemessage : string = "Feedback";
+    bannerImage : string = "../../assets/banner1.jpg"; 
+}

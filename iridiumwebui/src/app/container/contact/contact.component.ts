@@ -6,4 +6,7 @@ import { Component } from '@angular/core';
     styleUrls: ['./contact.component.scss']
 })
 
-export class ContactComponent {}
+export class ContactComponent {
+    titlemessage : string = "Contact Us";
+    bannerImage : string = "../../assets/banner1.jpg";
+}

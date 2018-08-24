@@ -6,4 +6,7 @@ import { Component } from '@angular/core';
     styleUrls: ['./procedure.component.scss']
 })
 
-export class ProcedureComponent {}
+export class ProcedureComponent {
+    titlemessage : string = "Procedure";
+    bannerImage : string = "../../assets/banner1.jpg";
+}

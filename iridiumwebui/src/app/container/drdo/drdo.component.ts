@@ -6,4 +6,7 @@ import { Component } from '@angular/core';
     styleUrls: ['./drdo.component.scss']
 })
 
-export class DrdoComponent {}
+export class DrdoComponent {
+    titlemessage : string = "Drdo";
+    bannerImage : string = "../../assets/banner1.jpg"; 
+}

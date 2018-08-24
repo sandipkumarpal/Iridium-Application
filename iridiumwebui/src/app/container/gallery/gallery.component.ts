@@ -6,4 +6,7 @@ import { Component } from '@angular/core';
     styleUrls: ['./gallery.component.scss']
 })
 
-export class GalleryComponent {}
+export class GalleryComponent {
+    titlemessage : string = "Gallery";
+    bannerImage : string = "../../assets/banner1.jpg"; 
+}
