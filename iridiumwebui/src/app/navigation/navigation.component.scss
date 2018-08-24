@@ -1,0 +1,19 @@
+.navlists {
+    text-align: center;
+    margin: 5% 0;
+
+    &__item {
+        display: block;
+
+        a {
+            display: block;
+            color: #fff;
+            font-size: 52px;
+            padding: 10px 0;
+            font-family: 'robotoblack';
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            line-height: 1.2;
+        }
+    }
+}

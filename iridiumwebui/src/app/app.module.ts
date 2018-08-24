@@ -16,7 +16,7 @@ import { FeedbackComponent } from './feedback/feedback.component';
 import { GalleryComponent } from './gallery/gallery.component';
 import { IridiumComponent } from './iridium/iridium.component';
 import { ProcedureComponent } from './procedure/procedure.component';
-import { NavigationComponent } from './nvaigation/navigation.component';
+import { NavigationComponent } from './navigation/navigation.component';
 import { NotFoundComponent } from './notfound/notfound.component';
 import { LogoComponent } from './logo/logo.component';
 
