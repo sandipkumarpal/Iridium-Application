@@ -1,0 +1,19 @@
+.title-header {
+    padding: 0;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    z-index: 1;
+}
+.title-header-block {
+    background-color: #565656;
+    padding: 0 20px;
+}
+.title-header__title {
+    margin: 0;
+    font-family: 'robotoblack';
+    font-size: 60px;
+    color: #fff;
+    line-height: 1.2;
+}

@@ -5,20 +5,22 @@ import { AngularFontAwesomeModule } from 'angular-font-awesome';
 
 
 import { AppComponent } from './app.component';
-import { LoaderComponent } from './loader/loader.component';
-import { HomeComponent } from './home/home.component';
-import { HeaderComponent } from './header/header.component';
-import { IntroComponent } from './intro/intro.component';
-import { AboutComponent } from './about/about.component';
-import { ContactComponent } from './contact/contact.component';
-import { DrdoComponent } from './drdo/drdo.component';
-import { FeedbackComponent } from './feedback/feedback.component';
-import { GalleryComponent } from './gallery/gallery.component';
-import { IridiumComponent } from './iridium/iridium.component';
-import { ProcedureComponent } from './procedure/procedure.component';
-import { NavigationComponent } from './navigation/navigation.component';
-import { NotFoundComponent } from './notfound/notfound.component';
-import { LogoComponent } from './logo/logo.component';
+import { LoaderComponent } from './components/loader/loader.component';
+import { HomeComponent } from './container/home/home.component';
+import { HeaderComponent } from './components/header/header.component';
+import { IntroComponent } from './container/intro/intro.component';
+import { AboutComponent } from './container/about/about.component';
+import { ContactComponent } from './container/contact/contact.component';
+import { DrdoComponent } from './container/drdo/drdo.component';
+import { FeedbackComponent } from './container/feedback/feedback.component';
+import { GalleryComponent } from './container/gallery/gallery.component';
+import { IridiumComponent } from './container/iridium/iridium.component';
+import { ProcedureComponent } from './container/procedure/procedure.component';
+import { NavigationComponent } from './components/navigation/navigation.component';
+import { NotFoundComponent } from './container/notfound/notfound.component';
+import { LogoComponent } from './components/logo/logo.component';
+import { TitleComponent } from './components/title/title.component';
+import { staticBannerComponent } from './components/staticBanner/staticBanner.component';
 
 @NgModule({
   declarations: [
@@ -37,6 +39,8 @@ import { LogoComponent } from './logo/logo.component';
     NotFoundComponent,
     NavigationComponent,
     LogoComponent,
+    TitleComponent,
+    staticBannerComponent,
   ],
   imports: [
     BrowserModule,
