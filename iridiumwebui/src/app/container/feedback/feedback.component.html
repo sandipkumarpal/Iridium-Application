@@ -5,7 +5,46 @@
     </section>
     <article class="container-article">
         <div class="container">
-            
+                <form action="/" method="post" enctype="multipart/form-data" name="f2" onsubmit="return validation1();">
+
+					<table width="100%" border="0" cellspacing="0" cellpadding="5">
+
+  <tbody><tr>
+
+    <td valign="top" style="width:170px;">Name : * </td>
+
+    <td style="width:170px;" valign="top"><input name="cname" class="text_box" style="width:160px;"></td>
+
+
+  <tr>
+
+    <td>Email: *</td>
+
+    <td><input name="cemail" class="text_box" style="width:160px;"></td>
+
+    </tr>
+
+  <tr>
+
+    <td valign="top">Post Your Feedback :</td>
+
+    <td valign="top"><textarea name="comment" style="width:160px; height:100px;"></textarea></td>
+
+    </tr>
+
+  <tr>
+
+    <td valign="top">&nbsp;</td>
+
+    <td valign="top"><input name="Submit" onclick="return validateform()" type="submit" class="btn" value="Submit">
+
+        <input name="Reset" type="reset" class="btn" value="Reset"></td>
+
+    </tr>
+
+</tbody></table>
+
+</form>
         </div>
     </article>
 </section>
