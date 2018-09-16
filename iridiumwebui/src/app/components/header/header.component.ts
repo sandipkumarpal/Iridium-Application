@@ -1,5 +1,4 @@
-import { Component, OnInit } from '@angular/core';
-declare const $: any;
+import { Component } from '@angular/core';
 
 @Component({
     selector: 'app-header',
@@ -7,17 +6,6 @@ declare const $: any;
     styleUrls: ['./header.component.scss']
 })
 
-export class HeaderComponent implements OnInit {
-    public showMenu = false;
-    public buttonName = `<i class="material-icons left">dehaze</i>`;
-    ngOnInit() {
-    }
-    toggle() {
-        this.showMenu = !this.showMenu;
-        if (this.showMenu) {
-          this.buttonName = 'close';
-        } else {
-          this.buttonName = 'dehaze';
-        }
-    }
+export class HeaderComponent {
+    
 }

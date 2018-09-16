@@ -6,4 +6,6 @@ import { Component } from '@angular/core';
     styleUrls: ['./logo.component.scss']
 })
 
-export class LogoComponent {}
+export class LogoComponent {
+    logo = '../../../assets/images/logo.svg';
+}

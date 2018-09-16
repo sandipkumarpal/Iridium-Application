@@ -2,27 +2,16 @@
 
 .header {
     @include overlay-block(absolute, 15px, 30px, 0, inherit);
-    .header-menu {
-        position: fixed;
-        top: 20px;
-        right: 20px;
-    }
+    z-index: 9;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
 .navigation {
-    background-color: #0036ab;
-    @include overlay-block(fixed, 0, 0, -17px, 0);
-    z-index: 999;
-    overflow-y: scroll;
+    position: relative;
+    padding-right: 20px;
 }
 .menuButton-active {
-    position: absolute;
-    z-index: 1000;
+    
 }
-.header-menu {
-    background-color: transparent;
-    i {
-        font-size: 32px;
-    }
-}
-

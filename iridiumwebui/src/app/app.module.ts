@@ -1,7 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule, ModuleWithProviders } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AngularFontAwesomeModule } from 'angular-font-awesome';
+// import { SlickCarouselModule } from 'ngx-slick-carousel';
 
 
 import { AppComponent } from './app.component';
@@ -21,6 +22,11 @@ import { NotFoundComponent } from './container/notfound/notfound.component';
 import { LogoComponent } from './components/logo/logo.component';
 import { TitleComponent } from './components/title/title.component';
 import { staticBannerComponent } from './components/staticBanner/staticBanner.component';
+import { HomeLoaderComponent } from './components/homeLoader/homeLoader.component';
+import { HomeBubbleComponent } from './components/homeBubble/homeBubble.component';
+import { HomeBlockComponent } from './container/homeBlock/homeBlock.component';
+import { BlocksComponent } from './components/blocks/blocks.component';
+import { HomeBlockContentComponent } from './container/homeBlockContent/homeBlockContent.component';
 
 @NgModule({
   declarations: [
@@ -41,12 +47,19 @@ import { staticBannerComponent } from './components/staticBanner/staticBanner.co
     LogoComponent,
     TitleComponent,
     staticBannerComponent,
+    HomeLoaderComponent,
+    HomeBubbleComponent,
+    HomeBlockComponent,
+    BlocksComponent,
+    HomeBlockContentComponent
   ],
   imports: [
     BrowserModule,
     AngularFontAwesomeModule,
     RouterModule.forRoot([
       { path: '', component: HomeComponent },
+      { path: 'home', component: HomeBlockComponent },
+      { path: 'home/:id', component: HomeBlockContentComponent },
       { path: 'intro', component: IntroComponent },
       { path: 'about', component: AboutComponent },
       { path: 'contact', component: ContactComponent },
@@ -57,6 +70,7 @@ import { staticBannerComponent } from './components/staticBanner/staticBanner.co
       { path: 'procedure', component: ProcedureComponent },
       { path: '**', component: NotFoundComponent }
     ]),
+    // SlickCarouselModule
   ],
   entryComponents: [
     HomeComponent,

@@ -1,0 +1,24 @@
+<section class="container-page homeBlock">
+    <div class="roundTexture"></div>
+    <article class="container-article">
+        <div class="container-fluid">
+            <header class="titleRotated">
+                <h2 class="titleRotated__title">Home</h2>
+            </header>
+            <div class="homeBlockContentWrap">
+                <div class="row">                    
+                        <div *ngFor="let dataContent of data">
+                            <div class="col m3">
+                                <app-blocks 
+                                    [id]="dataContent.id"
+                                    [link]="dataContent.title" 
+                                    [title]="dataContent.title" 
+                                    [image]="dataContent.image">
+                                </app-blocks>
+                            </div>
+                        </div>
+                    </div>
+            </div>
+        </div>
+    </article>
+</section>

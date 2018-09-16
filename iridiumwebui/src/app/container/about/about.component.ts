@@ -8,5 +8,5 @@ import { Component } from '@angular/core';
 
 export class AboutComponent {
     titlemessage : string = "About Us";
-    bannerImage : string = "../../assets/banner1.jpg"; 
+    bannerImage : string = "http://universesofttechnologies.in/amru_new/images/banner1.jpg"; 
 }

@@ -1,16 +1,6 @@
 <header class="header">
     <app-logo></app-logo>
-    <span 
-        class="btn-floating btn-large waves-effect waves-light header-menu"
-        (click)="toggle()"
-        [class.menuButton-active]="showMenu"
-    >
-        <i *ngIf="!showMenu; else elseBlock" class="material-icons left">dehaze</i>
-        <ng-template #elseBlock>
-            <i class="material-icons left">close</i>
-        </ng-template>
-    </span>
+    <div class="navigation">
+        <app-navigation></app-navigation>
+    </div>
 </header>
-<div class="navigation" *ngIf="showMenu" (click)="toggle()">
-    <app-navigation></app-navigation>
-</div>

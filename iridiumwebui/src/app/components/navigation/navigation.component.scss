@@ -1,19 +1,27 @@
 .navlists {
-    text-align: center;
-    margin: 5% 0;
+    text-align: left;
+    margin: 0;
 
     &__item {
-        display: block;
+        display: inline-block;
+        vertical-align: top;
 
         a {
             display: block;
             color: #fff;
-            font-size: 52px;
-            padding: 10px 0;
-            font-family: 'robotoblack';
-            letter-spacing: 0.1em;
-            text-transform: uppercase;
+            font-size: 15px;
+            padding: 10px 22px;
+            font-family: 'antonregular', sans-serif;
             line-height: 1.2;
+            span {
+                letter-spacing: inherit;
+                font-size: 10px;
+                display: block;
+                margin-bottom: 5px;
+                text-transform: none;
+                font-family: 'robotomedium', sans-serif;
+                color: #adcddc;
+            }
         }
     }
 }

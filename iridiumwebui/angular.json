@@ -25,10 +25,12 @@
             "styles": [
               "./node_modules/materialize-css/sass/materialize.scss",
               "./node_modules/font-awesome/css/font-awesome.css",
+
               "src/scss/styles.scss"
             ],
             "scripts": [
               "./node_modules/jquery/dist/jquery.min.js"
+
             ]
           },
           "configurations": {
