@@ -2,8 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, ModuleWithProviders } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AngularFontAwesomeModule } from 'angular-font-awesome';
-// import { SlickCarouselModule } from 'ngx-slick-carousel';
-
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppComponent } from './app.component';
 import { LoaderComponent } from './components/loader/loader.component';
@@ -55,20 +54,21 @@ import { HomeBlockContentComponent } from './container/homeBlockContent/homeBloc
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     AngularFontAwesomeModule,
     RouterModule.forRoot([
-      { path: '', component: HomeComponent },
-      { path: 'home', component: HomeBlockComponent },
-      { path: 'home/:id', component: HomeBlockContentComponent },
-      { path: 'intro', component: IntroComponent },
-      { path: 'about', component: AboutComponent },
-      { path: 'contact', component: ContactComponent },
-      { path: 'drdo', component: DrdoComponent },
-      { path: 'feedback', component: FeedbackComponent },
-      { path: 'gallery', component: GalleryComponent },
-      { path: 'iridium', component: IridiumComponent },
-      { path: 'procedure', component: ProcedureComponent },
-      { path: '**', component: NotFoundComponent }
+      { path: '', component: HomeComponent, data: { state: 'home'} },
+      { path: 'home', component: HomeBlockComponent, data: { state: 'homecontent'} },
+      { path: 'home/:id', component: HomeBlockContentComponent, data: { state: 'homedetails'} },
+      { path: 'intro', component: IntroComponent, data: { state: 'intro'} },
+      { path: 'about', component: AboutComponent, data: { state: 'about'} },
+      { path: 'contact', component: ContactComponent, data: { state: 'contact'} },
+      { path: 'drdo', component: DrdoComponent, data: { state: 'drdo'} },
+      { path: 'feedback', component: FeedbackComponent, data: { state: 'feedback'} },
+      { path: 'gallery', component: GalleryComponent, data: { state: 'gallery'} },
+      { path: 'iridium', component: IridiumComponent, data: { state: 'iridium'} },
+      { path: 'procedure', component: ProcedureComponent, data: { state: 'procedure'} },
+      { path: '**', component: NotFoundComponent, data: { state: 'notfound'} }
     ]),
     // SlickCarouselModule
   ],

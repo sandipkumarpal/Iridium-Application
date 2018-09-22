@@ -35,7 +35,7 @@ export class HomeBubbleComponent implements OnInit {
 				var curr = document.getElementsByClassName("bubble")[i];
 				$(curr).css("left", Math.floor(Math.random() * boundsX) + "px");
 				$(curr).css("top", Math.floor(Math.random() * boundsX) + "px");
-				var radious = Math.floor(Math.random() * 200) + 50;
+				var radious = Math.floor(Math.random() * 350) + 50;
 				$(curr).css({"width": radious + "px", "height": radious + "px"});
 			}
 			$(window).resize(restartAnimation);

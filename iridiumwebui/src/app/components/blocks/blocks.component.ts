@@ -12,6 +12,7 @@ export class BlocksComponent implements OnInit {
     @Input('image') imgurl;
     @Input('link') linkurl;
     @Input('id') id;
+    @Input('color') color;
     constructor(
         private router : Router
     ){}
