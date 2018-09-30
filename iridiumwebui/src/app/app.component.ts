@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-
-import { routerTransition } from './common/router.animations';
+import { ActivatedRoute } from '@angular/router';
+import { routerTransition } from './common/animations/router.animations';
 
 @Component({
   selector: 'app-root',
@@ -9,15 +9,21 @@ import { routerTransition } from './common/router.animations';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent implements OnInit {
-  getState(outlet) {
-    return outlet.activatedRouteData.state;
-  }
   title = 'iridiumwebui';
   loader = true;
+  headerActive: boolean = false;
 
+  getState(outlet) {
+    if(outlet.activatedRouteData.state === 'contact') {
+      this.headerActive = true;
+    }
+    return outlet.activatedRouteData.state;
+  }
+  
   ngOnInit() {
     setInterval(() => {
       this.loader = false;
-    }, 1000);
+    }, 9000);
+
   }
 }

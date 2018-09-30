@@ -1,11 +1,20 @@
-body {
+ .loader-page {
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
     font-family: 'Anton', sans-serif;
     -webkit-user-select: none;
     overflow: hidden;
+    position: fixed;
+    top: 0;
+    left:0;
+    bottom: 0;
+    right:0;
+    background: #2c2d44;
+    background-image: -moz-linear-gradient(45deg, #1e0442 2%, #003e48 100%);
+    background-image: -webkit-linear-gradient(45deg, #1e0442 2%, #003e48 100%);
+    background-image: linear-gradient(45deg, #1e0442 2%, #003e48 100%);
   }
-  body .vertical-centered-box {
+   .vertical-centered-box {
     position: absolute;
     width: 100%;
     height: 100%;
@@ -13,14 +22,14 @@ body {
     top: 0;
     left: 0;
   }
-  body .vertical-centered-box:after {
+   .vertical-centered-box:after {
     content: '';
     display: inline-block;
     height: 100%;
     vertical-align: middle;
     margin-right: -0.25em;
   }
-  body .vertical-centered-box .content {
+   .vertical-centered-box .content {
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
@@ -34,9 +43,6 @@ body {
     -moz-transition: all 0.3s;
     -o-transition: all 0.3s;
     transition: all 0.3s;
-  }
-  body {
-    background: #2c2d44;
   }
   .loader-circle {
     position: absolute;

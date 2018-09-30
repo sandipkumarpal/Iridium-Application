@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { headerAnimation } from '../../common/header.animation';
+import { headerAnimation } from '../../common/animations/header.animation';
 
 @Component({
     selector: 'app-header',

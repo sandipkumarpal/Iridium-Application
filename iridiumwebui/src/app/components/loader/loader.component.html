@@ -1,8 +1,5 @@
-<div>Loading...</div>	
-
-<div id="particles-background" class="vertical-centered-box"></div>
-	<div id="particles-foreground" class="vertical-centered-box"></div>
-
+<div class="loader-page">
+	<particles [params]="myParams" [style]="myStyle" [width]="width" [height]="height"></particles>
 	<div class="vertical-centered-box">
 	  <div class="content">
 	    <div class="loading__spinner">
@@ -32,7 +29,6 @@
 		  </div>
 		</div>
 	  </div>
-	  	<embed src="sound/bensound-straight.mp3" autostart="true" loop="true" hidden="true">
 	</div>
 	<div class="equalizer">
 	  <div class="equalizer__bar"></div>
@@ -41,3 +37,4 @@
 	  <div class="equalizer__bar"></div>
 	  <div class="equalizer__bar"></div>
 	</div>
+</div>

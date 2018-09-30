@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
     selector: 'app-navigation',
@@ -6,4 +7,8 @@ import { Component } from '@angular/core';
     styleUrls: ['./navigation.component.scss']
 })
 
-export class NavigationComponent {}
+export class NavigationComponent {
+    constructor(route: ActivatedRoute) {
+        route.params.subscribe(params => console.log("side menu id parameter", params['contact']));
+    }
+}

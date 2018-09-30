@@ -8,15 +8,16 @@
 	width: 100px;
 	height: 100px;
 	border-radius: 50px;
-	background-color: #0066CC;
-	opacity: .5;
+	background-color: #6200ee;
+	opacity: 1;
 }
 .bubble {
     position: absolute;
     width: 100px;
     height: 100px;
     border-radius: 100%;
-    background: rgba(255, 255, 255, .2);
+	background: #fff;
+	opacity: 0.05;
 }
 #bubbleContainer {
     position: fixed;

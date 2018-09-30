@@ -3,6 +3,10 @@ import { NgModule, ModuleWithProviders } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AngularFontAwesomeModule } from 'angular-font-awesome';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { GalleryModule } from  '@ngx-gallery/core';
+import { LightboxModule } from  '@ngx-gallery/lightbox';
+import { ParticlesModule } from 'angular-particle';
+import { ParticleEffectButtonModule } from "angular-particle-effect-button";
 
 import { AppComponent } from './app.component';
 import { LoaderComponent } from './components/loader/loader.component';
@@ -26,6 +30,8 @@ import { HomeBubbleComponent } from './components/homeBubble/homeBubble.componen
 import { HomeBlockComponent } from './container/homeBlock/homeBlock.component';
 import { BlocksComponent } from './components/blocks/blocks.component';
 import { HomeBlockContentComponent } from './container/homeBlockContent/homeBlockContent.component';
+
+import { DataService } from './common/services/dataService.services';
 
 @NgModule({
   declarations: [
@@ -55,7 +61,11 @@ import { HomeBlockContentComponent } from './container/homeBlockContent/homeBloc
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
+    GalleryModule.forRoot(),
+    LightboxModule.forRoot(),
     AngularFontAwesomeModule,
+    ParticlesModule,
+    ParticleEffectButtonModule,
     RouterModule.forRoot([
       { path: '', component: HomeComponent, data: { state: 'home'} },
       { path: 'home', component: HomeBlockComponent, data: { state: 'homecontent'} },
@@ -75,7 +85,7 @@ import { HomeBlockContentComponent } from './container/homeBlockContent/homeBloc
   entryComponents: [
     HomeComponent,
   ],
-  providers: [],
+  providers: [DataService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

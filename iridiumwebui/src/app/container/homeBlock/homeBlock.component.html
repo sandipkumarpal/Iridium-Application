@@ -1,25 +1,29 @@
+<app-header></app-header>
 <section class="container-page homeBlock">
-    <div class="roundTexture"></div>
-    <article class="container-article">
-        <div class="container-fluid">
-            <header class="titleRotated">
-                <h2 class="titleRotated__title">Home</h2>
-            </header>
-            <div class="homeBlockContentWrap">
-                <div class="row">                    
-                        <div *ngFor="let dataContent of data">
-                            <div class="col m3 dataContent__col">
-                                <app-blocks 
-                                    [id]="dataContent.id"
-                                    [color]= "dataContent.color"
-                                    [link]="dataContent.title" 
-                                    [title]="dataContent.title" 
-                                    [image]="dataContent.image">
-                                </app-blocks>
+    <div class="container-wrapper">
+        <div class="roundTexture"></div>
+        <div class="roundTexture__bottom"></div>
+        <article class="container-article">
+            <div class="container-fluid">
+                <header class="titleRotated">
+                    <h2 class="titleRotated__title">Home</h2>
+                </header>
+                <div class="homeBlockContentWrap">
+                    <div class="row">                    
+                            <div *ngFor="let dataContent of data">
+                                <div class="col m3 dataContent__col">
+                                    <app-blocks 
+                                        [id]="dataContent.id"
+                                        [color]= "dataContent.color"
+                                        [link]="dataContent.title" 
+                                        [title]="dataContent.title" 
+                                        [image]="dataContent.image">
+                                    </app-blocks>
+                                </div>
                             </div>
                         </div>
-                    </div>
+                </div>
             </div>
-        </div>
-    </article>
+        </article>
+    </div>
 </section>

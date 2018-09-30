@@ -1,7 +1,7 @@
 @import '../../../scss/mixine.scss';
 
 .header {
-    @include overlay-block(absolute, 15px, 30px, 0, inherit);
+    @include overlay-block(absolute, 15px, 30px, 30px, inherit);
     z-index: 9;
     display: flex;
     align-items: center;

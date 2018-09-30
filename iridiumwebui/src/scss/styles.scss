@@ -2,6 +2,8 @@
 @import 'variable.scss';
 @import 'font.scss';
 @import 'mixine.scss';
+@import '~@ngx-gallery/core/styles/scss/gallery';
+@import '~@ngx-gallery/core/styles/scss/lightbox';
 
 html {
     font-size: $theme_default_size;
@@ -15,18 +17,6 @@ body {
     font-family: 'robotoregular', sans-serif;
     // background-color: $theme_background_dark;
     @include fontSize(16px);
-    background-color: #22698a;
+    // background-color: #22698a;
 }
 
-.roundTexture {
-    position: absolute;
-    top: -50%;
-    left: 50%;
-    -webkit-transform: translateX(-50%);
-    transform: translateX(-50%);
-    background-color: #185673;
-    border-radius: 50%;
-    min-width: 600px;
-    min-height: 600px;
-    z-index: -1;
-}

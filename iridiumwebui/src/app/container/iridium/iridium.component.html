@@ -1,159 +1,91 @@
+<app-header></app-header>
 <section class="container-page">
-    <section class="container-titleBanner">
-        <app-title [title]="titlemessage"></app-title>
-        <app-staticBanner [staticImg]="bannerImage"></app-staticBanner>
-    </section>
-    <article class="container-article">
-        <div class="container">
-                <table width="871" cellpadding="0" cellspacing="0">
-
-                      
-
-                      
-
-                        <tbody><tr height="24">
-  
-                          <td height="24" valign="top">ATOMIC NUMBER </td>
-  
-                          <td valign="top">77</td>
-  
-                          <td rowspan="16" valign="top" align="center"><a href="css/images/prtab.jpg" class="group1 cboxElement">
-  
-                          
-  
-                          </a><br>
-  
-  Click the image for enlarge view</td>
-  
-                        </tr>
-  
-                        <tr height="24">
-  
-                          <td height="24" valign="top">ATOMIC WEIGHT </td>
-  
-                          <td valign="top">192.2</td>
-  
-                        </tr>
-  
-                        <tr height="24">
-  
-                          <td height="24" valign="top">STABLE ISOTOPES, MASS UNITS    </td>
-  
-                          <td valign="top">191.193</td>
-  
-                        </tr>
-  
-                        <tr height="24">
-  
-                          <td height="24" valign="top">CRYSTAL STRUCTURE </td>
-  
-                          <td valign="top">FACE CENTRE    CUBIC</td>
-  
-                        </tr>
-  
-                        <tr height="24">
-  
-                          <td height="24" valign="top">DENSITY AT 20°C </td>
-  
-                          <td valign="top">22.41gms/cms</td>
-  
-                        </tr>
-  
-                        <tr height="24">
-  
-                          <td height="24" valign="top">MELTING POINT </td>
-  
-                          <td valign="top">2446+/-3°C</td>
-  
-                        </tr>
-  
-                        <tr height="24">
-  
-                          <td height="24" valign="top">BOILING POINT </td>
-  
-                          <td valign="top">5300*C</td>
-  
-                        </tr>
-  
-                        <tr height="24">
-  
-                          <td height="24" valign="top">ELETRICAL RESISTIVITY AT 0°C    </td>
-  
-                          <td valign="top">4.71 MICROHM CM&nbsp;</td>
-  
-                        </tr>
-  
-                        <tr height="24">
-  
-                          <td height="24" valign="top">THERMAL CONDUCTIVITY (0-100°C)    </td>
-  
-                          <td valign="top">1.483/cmA&nbsp;</td>
-  
-                        </tr>
-  
-                        <tr height="24">
-  
-                          <td height="24" valign="top">THERMAL CMF AGAINTS    P.T.©1000°C </td>
-  
-                          <td valign="top">+12.73 MILLIVOLTS</td>
-  
-                        </tr>
-  
-                        <tr height="24">
-  
-                          <td height="24" valign="top">HARDNESS (ANNEALED)    </td>
-  
-                          <td valign="top">200-240kg/mm2(H4)</td>
-  
-                        </tr>
-  
-                        <tr height="24">
-  
-                          <td height="24" valign="top">MODULUS OF ELASTICITY (E) </td>
-  
-                          <td valign="top">516    X 10° MN/m<sup>2</sup></td>
-  
-                        </tr>
-  
-                        <tr height="24">
-  
-                          <td height="24" valign="top">MODULUS OF RIGIDITY (G) </td>
-  
-                          <td valign="top">210 X    10° MN/m<sup>2</sup></td>
-  
-                        </tr>
-  
-                        <tr height="24">
-  
-                          <td height="24" valign="top">BULK MODULUS (K) </td>
-  
-                          <td valign="top">371 X 10°    MN/m<sup>2</sup></td>
-  
-                        </tr>
-  
-                        <tr height="24">
-  
-                          <td height="24" valign="top">POISON'S RATIO </td>
-  
-                          <td valign="top">0.26</td>
-  
-                        </tr>
-  
-                        <tr height="24">
-  
-                          <td height="24" valign="top"></td>
-  
-                          <td valign="top"></td>
-  
-                        </tr>
-  
-                        <tr height="24">
-  
-                          <td height="24" colspan="3" valign="top">TYPICAL TENSITE STRENGTH    (ANNEALED) 490-740 MN/m'</td>
-  
-                        </tr>
-  
-                  </tbody></table>
-        </div>
-    </article>
+  <div class="container-article">
+      <article class="container-iridium">
+          <section class="container-title">
+              <h1>{{ titlemessage }}</h1>
+          </section>
+          <div class="container">
+            <div class="row">
+              <div class="col m6">
+                  <div class="iridium-table-container">
+                      <table cellpadding="0" cellspacing="0" class="iridium-table">
+                          <tbody>
+                            <tr>
+                              <td>ATOMIC NUMBER</td>
+                              <td>77</td>
+                            </tr>
+                            <tr>
+                              <td>ATOMIC WEIGHT</td>
+                              <td>192.2</td>
+                            </tr>
+                            <tr>
+                              <td>STABLE ISOTOPES, MASS UNITS</td>
+                              <td>191.193</td>
+                            </tr>
+                            <tr>
+                              <td>CRYSTAL STRUCTURE</td>
+                              <td>FACE CENTRE CUBIC</td>
+                            </tr>
+                            <tr>
+                              <td>DENSITY AT 20°C</td>
+                              <td>22.41gms/cms</td>
+                            </tr>
+                            <tr>
+                              <td>MELTING POINT</td>
+                              <td>2446+/-3°C</td>
+                            </tr>
+                            <tr>
+                              <td>BOILING POINT</td>
+                              <td>5300*C</td>
+                            </tr>
+                            <tr>
+                              <td>ELETRICAL RESISTIVITY AT 0°C</td>
+                              <td>4.71 MICROHM CM&nbsp;</td>
+                            </tr>
+                            <tr>
+                              <td>THERMAL CONDUCTIVITY (0-100°C)</td>
+                              <td>1.483/cmA&nbsp;</td>
+                            </tr>
+                            <tr>
+                              <td>THERMAL CMF AGAINTS P.T.©1000°C</td>
+                              <td>+12.73 MILLIVOLTS</td>
+                            </tr>
+                            <tr>
+                              <td>HARDNESS (ANNEALED)</td>
+                              <td>200-240kg/mm2(H4)</td>
+                            </tr>
+                            <tr>
+                              <td>MODULUS OF ELASTICITY (E)</td>
+                              <td>516 X 10° MN/m<sup>2</sup></td>
+                            </tr>
+                            <tr>
+                              <td>MODULUS OF RIGIDITY (G) </td>
+                              <td>210 X 10° MN/m<sup>2</sup></td>
+                            </tr>
+                            <tr>
+                              <td>BULK MODULUS (K)</td>
+                              <td>371 X 10° MN/m<sup>2</sup></td>
+                            </tr>
+                            <tr>
+                              <td>POISON'S RATIO</td>
+                              <td>0.26</td>
+                            </tr>
+                            <tr>
+                              <td>TYPICAL TENSITE STRENGTH (ANNEALED)</td>
+                              <td>490-740 MN/m'</td>
+                            </tr>
+                          </tbody>
+                        </table>
+                  </div>
+              </div>
+              <div class="col m6">
+                <figure class="iridium-figure">
+                  <img src="https://picsum.photos/1200/1024?image=0" alt="">
+                </figure>
+              </div>
+            </div>
+          </div>
+      </article>
+  </div>
 </section>

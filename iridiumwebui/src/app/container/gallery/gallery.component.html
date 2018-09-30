@@ -1,11 +1,15 @@
+<app-header></app-header>
 <section class="container-page">
-    <section class="container-titleBanner">
-        <app-title [title]="titlemessage"></app-title>
-        <app-staticBanner [staticImg]="bannerImage"></app-staticBanner>
-    </section>
     <article class="container-article">
-        <div class="container">
-            
+        <div class="container-gallery">
+            <h2 class="gallery__title">{{titlemessage}}</h2>
+            <div class="gallery__block">
+                <div  class="gallery">
+                    <div class="gallery__item" *ngFor="let item of items; let i = index" (click)="lightbox.open(i)">
+                        <img [src]="item.data.src" class="gallery__image">
+                      </div>
+                </div>
+            </div>
         </div>
     </article>
 </section>

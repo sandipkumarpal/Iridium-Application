@@ -1,12 +1,54 @@
 @import '../../../scss/mixine.scss';
 .container-page {
-    padding-left: 30px;
-    padding-right: 30px;
-    padding-top: 150px;
-    padding-bottom: 100px;
+    padding:0;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
 }
-.container-titleBanner {
+.container-article {
+    padding: 40px;
+    background-color: #080808;
+    color: #fff;
+    height: 100vh;
+    overflow-y: auto;
+    background-image: url(../../../assets/images/gallerytexture.png);
+}
+.container-gallery {
+    padding: 120px 40px 40px; 
     position: relative;
-    overflow: hidden;
-    margin-bottom: 70px;
+}
+.gallery__title {
+    user-select: none;
+    margin: 0;
+    font-family: 'antonregular', sans-serif;
+    font-size: 300px;
+    line-height: 1;
+    color: #ffde03;
+    padding-top: 0;
+    text-align: center;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 60px;
+}
+.gallery__block {
+    position: relative;
+}
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    padding-top: 130px;
+    &__item {
+        cursor: pointer;
+        flex: 0 0 33.333%;
+        max-width: 33.333%;
+    }
+    &__image {
+        max-width: 100%;
+        height: auto;
+        display: block;
+    }
 }

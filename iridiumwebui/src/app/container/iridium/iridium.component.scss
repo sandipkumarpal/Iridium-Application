@@ -1,12 +1,57 @@
 @import '../../../scss/mixine.scss';
 .container-page {
-    padding-left: 30px;
-    padding-right: 30px;
-    padding-top: 150px;
-    padding-bottom: 100px;
+    padding:0;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
 }
-.container-titleBanner {
+.container-article {
+    padding: 0;
+    background-color: #ab003c;
+    color: #fff;
+    height: 100vh;
+    overflow-y: auto;
+    background-image: url(../../../assets/images/gallerytexture.png);
+}
+.container-iridium {
+    padding: 150px 40px 40px 30px;
     position: relative;
-    overflow: hidden;
-    margin-bottom: 70px;
+}
+.container-title {
+    padding-bottom: 40px;
+    h1 {
+        text-align: center;
+        font-family: 'antonregular', sans-serif;
+        font-size: 80px;
+        line-height: 1;
+        margin: 0;
+        letter-spacing: 0.1em;
+    }
+}
+.iridium-table {
+    background-color: #1d1d1d;
+    td, th {
+        padding: 10px;
+        font-size: 15px;
+    }
+    tr {
+        border-bottom: 1px solid rgba(226, 226, 226, 0.12);
+    }
+}
+
+@media only screen and (min-width: 993px) {
+    .container-iridium .container {
+        width: 90%;
+    }
+}
+
+.iridium-figure {
+    margin: 0;
+    img {
+        max-width: 100%;
+        height: auto;
+    }
 }

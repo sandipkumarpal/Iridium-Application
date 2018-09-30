@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Location } from '@angular/common';
 
 @Component({
     selector: 'app-contact',
@@ -8,5 +9,9 @@ import { Component } from '@angular/core';
 
 export class ContactComponent {
     titlemessage : string = "Contact Us";
-    bannerImage : string = "http://universesofttechnologies.in/amru_new/images/banner1.jpg";
+    constructor(private location: Location) { } 
+
+    cancelContact() {
+        this.location.back(); 
+    }
 }

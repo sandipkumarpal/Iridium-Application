@@ -1,6 +1,6 @@
 .pageScreen {
     height: 100vh;
-    background-color: #22698a;
+    background-color: #3700b3;
     position: relative;
 }
 .homeLoader {
@@ -10,6 +10,7 @@
     left: 50%;
     transform: translate(-50%, -50%);
     min-width: 602px;
+    z-index: 1;
 }
 .home__center__Block {
     position: absolute;
@@ -37,16 +38,26 @@
     
 }
 .btn-home {
-    height: auto;
-    background-color: #171717;
-    color: #fff;
-    border-radius: 3px;
-    font-family: 'antonregular', sans-serif;
-    font-size: 16px;
-    text-transform: none;
+    cursor: pointer;
     line-height: 41px;
-    padding: 6px 30px;
-    margin-top: 24px;
+    padding: 0px;
+    height: 60px;
+    background-color: #171717;
+    border-radius: 3px;
+    button {
+        height: auto;
+        background-color: #171717;
+        color: #fff;
+        border-radius: 3px;
+        font-family: 'antonregular', sans-serif;
+        font-size: 16px;
+        text-transform: none;
+        line-height: 48px;
+        padding: 10px 30px;
+        border: none;
+        height: 60px;
+        cursor: pointer;
+    }
     svg {
         display: inline-block;
         vertical-align: middle;

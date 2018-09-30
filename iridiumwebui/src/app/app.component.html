@@ -1,7 +1,5 @@
 <div class="page">
     <!-- <app-loader *ngIf="loader"></app-loader> -->
-    <app-header *ngIf="!loader"></app-header>
-    <!-- <router-outlet *ngIf="!loader"></router-outlet> -->
     <main [@routerTransition]="getState(o)">
         <router-outlet #o="outlet"></router-outlet>
     </main>

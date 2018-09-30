@@ -1,12 +1,151 @@
 @import '../../../scss/mixine.scss';
 .container-page {
-    padding-left: 30px;
-    padding-right: 30px;
-    padding-top: 150px;
-    padding-bottom: 100px;
+    padding:0;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
 }
 .container-titleBanner {
     position: relative;
     overflow: hidden;
     margin-bottom: 70px;
+}
+
+.container-feedback {
+    display: flex;
+    flex-wrap: wrap;
+
+    &__blank,
+    &__form {
+        flex: 0 0 50%; 
+    }
+    &__block {
+        padding: 40px;
+        background-color: #181818;
+        background-image: url(../../../assets/images/feedbacktexture.png); 
+        color: #fff;
+        height: 100vh;
+        overflow-y: auto;
+        display: flex;  
+        align-items: center;
+        flex-wrap: wrap;
+        form {
+            max-width: 500px;
+            margin: 0 auto;
+            flex: 0 0 100%;
+        }
+    }
+    &__blank {
+        background-color: #ff5722;
+        display: flex;
+        align-items: center;
+        color: #fff;
+        position: relative;
+    }
+}
+.back_btn {
+    position: absolute;
+    top: 40px;
+    right: 40px;
+    cursor: pointer;
+    background-color: #e4e4e4;
+    width: 48px;
+    text-align: center;
+    height: 48px;
+    border-radius: 50%;
+    &:hover,
+    &:focus {
+        background-color: #fff;
+    }
+    svg {
+        width: 28px;
+        padding: 4px;
+    }
+}
+.input-field {
+    margin-bottom: 32px;
+    > label {
+        color: #fff9f8;
+        top: -30px;
+        font-size: 13px;
+    }
+}
+input:not([type]), 
+input[type=text]:not(.browser-default), 
+input[type=password]:not(.browser-default), 
+input[type=email]:not(.browser-default), 
+input[type=url]:not(.browser-default), 
+input[type=time]:not(.browser-default), 
+input[type=date]:not(.browser-default), 
+input[type=datetime]:not(.browser-default), 
+input[type=datetime-local]:not(.browser-default), 
+input[type=tel]:not(.browser-default), 
+input[type=number]:not(.browser-default), 
+input[type=search]:not(.browser-default), 
+textarea.materialize-textarea {
+    height: 48px;
+    border: 2px solid #fff9f8;
+    padding: 0 12px;
+    box-sizing: border-box;
+    color: #fff;
+}
+textarea.materialize-textarea {
+    padding: 12px;
+    height: 150px;
+}
+/* label focus color */
+.input-field input[type=text]:focus + label,
+.input-field input[type=email]:focus + label,
+textarea.materialize-textarea:focus + label {
+    color: #039be5;
+  }
+  /* label underline focus color */
+  .input-field input[type=text]:focus,
+  .input-field input[type=email]:focus,
+  textarea.materialize-textarea:focus {
+    border-bottom: 1px solid #039be5;
+    box-shadow: 0 1px 0 0 #039be5;
+  }
+  /* valid color */
+  .input-field input[type=text].valid,
+  .input-field input[type=email].valid,
+  textarea.materialize-textarea.valid {
+    border: 2px solid #43e503;
+    box-shadow: 0 1px 0 0 #43e503;
+  }
+  /* invalid color */
+  .input-field input[type=text].invalid,
+  .input-field input[type=email].invalid,
+  textarea.materialize-textarea.invalid {
+    border: 2px solid #e50303;
+    box-shadow: 0 1px 0 0 #e50303;
+  }
+  /* icon prefix focus color */
+  .input-field .prefix.active {
+    color: #039be5;
+  }
+  .btn__submit {
+    background-color: #039be5;
+    width: 100%;
+    font-family: 'antonregular', sans-serif;
+    font-size: 20px;
+    letter-spacing: 0.1em;
+    &:hover,
+    &:focus {
+        background-color: #45b9f1;
+    }
+}
+.feedback-title {
+    margin: 0;
+    font-family: 'antonregular', sans-serif;
+    font-size: 130px;
+    line-height: 1;
+    color: #fff;
+    transform: rotate(-90deg) translateY(-50%);
+    position: absolute;
+    right: -230px;
+    z-index: 2;
 }
