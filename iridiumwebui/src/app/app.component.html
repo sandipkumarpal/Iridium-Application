@@ -1,6 +1,6 @@
 <div class="page">
-    <!-- <app-loader *ngIf="loader"></app-loader> -->
-    <main [@routerTransition]="getState(o)">
+    <app-loader *ngIf="loader"></app-loader>
+    <main *ngIf="!loader" [@routerTransition]="getState(o)">
         <router-outlet #o="outlet"></router-outlet>
     </main>
 </div>

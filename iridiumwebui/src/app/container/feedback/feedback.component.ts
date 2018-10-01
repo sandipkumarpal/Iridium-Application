@@ -1,10 +1,15 @@
 import { Component, OnInit } from '@angular/core';
 import { Location } from '@angular/common';
+import { FeedbackAnimation } from '../../common/animations/feedback.animation';
 
 @Component({
     selector: 'app-feedback',
     templateUrl: './feedback.component.html',
-    styleUrls: ['./feedback.component.scss']
+    styleUrls: ['./feedback.component.scss'],
+    animations: [FeedbackAnimation],
+    host: {
+        '[@FeedbackAnimation]': ''
+    }
 })
 
 export class FeedbackComponent implements OnInit {

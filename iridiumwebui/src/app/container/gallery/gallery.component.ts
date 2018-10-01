@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Gallery, GalleryItem, ImageItem } from '@ngx-gallery/core';
 import { Lightbox } from '@ngx-gallery/lightbox';
+import { GalleryAnimation } from '../../common/animations/gallery.animation';
 
 const data = [
       {
@@ -36,7 +37,11 @@ const data = [
 @Component({
     selector: 'app-gallery',
     templateUrl: './gallery.component.html',
-    styleUrls: ['./gallery.component.scss']
+    styleUrls: ['./gallery.component.scss'],
+    animations: [GalleryAnimation],
+    host: {
+        '[@GalleryAnimation]': ''
+    }
 })
 
 export class GalleryComponent implements OnInit {
