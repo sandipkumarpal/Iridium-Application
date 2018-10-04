@@ -17,6 +17,10 @@ export const GalleryAnimation = trigger('GalleryAnimation', [
         style({ transform: 'translateY(-20px)', opacity: 0 }),
         animate('0.5s ease-in', style({transform: 'translateY(0)', opacity: 1})),
     ]),
+    query('.gallery__block', [
+        style({ transform: 'translateY(25px)', opacity: 0 }),
+        animate('0.5s ease-in', style({transform: 'translateY(0)', opacity: 1})),
+    ]),
     query('.gallery__item', stagger(400, [
         style({ transform: 'translateY(25px)', opacity: 0 }),
         animate('0.5s ease-in', style({transform: 'translateY(0)', opacity: 1})),

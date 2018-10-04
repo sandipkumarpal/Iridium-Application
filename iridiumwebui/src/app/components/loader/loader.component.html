@@ -14,16 +14,17 @@
 		<div class="loading">
 		  <div class="loading__content">
 		  	<span class="loading__content__title">
-		  		<span class="loading__content__word">A</span>
-	  			<span class="loading__content__word">M</span>
-	  			<span class="loading__content__word">R</span>
-	  			<span class="loading__content__word">U</span>
+						<span class="loading__content__word">A</span>
+						<span class="loading__content__word">M</span>
+						<span class="loading__content__word">R</span>
+						<span class="loading__content__word">U</span>
 		  	</span>
 		  	<span class="loading__content__text">
 		  		<span class="loading__content__wrapper">
-		  			<span class="loading__content__letters">
-		  				U.S Atomic Metal & Research Unit
-		  			</span>
+						<span class="loading__content__letters">
+							<span *ngIf="logoTitle; else elseTitle">{{ logoTitle}}</span>
+							<ng-template #elseTitle>U.S. Atomic Metal & Research Unit</ng-template> 
+						</span>
 		  		</span>
 		  	</span>
 		  </div>

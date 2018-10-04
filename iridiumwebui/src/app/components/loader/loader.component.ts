@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 declare const $: any;
 import * as anime from 'animejs';
 
+import { FirebaseService } from '../../common/services/firebase.service';
+
 @Component({
     selector: 'app-loader',
     templateUrl: './loader.component.html',
@@ -9,12 +11,18 @@ import * as anime from 'animejs';
 })
 
 export class LoaderComponent implements OnInit {
+    page: string = 'home';
+    logoText: string;
+    logoTitle: string;
     myStyle: object = {};
     myParams: object = {};
     width: number = 100;
     height: number = 100;
 
+    constructor(private firebaseService: FirebaseService) { }
+
     ngOnInit() {
+        this.dataGotedFromServer(this.page);
         this.myStyle = {
             'position': 'fixed',
             'width': '100%',
@@ -200,4 +208,21 @@ export class LoaderComponent implements OnInit {
             
         });
     }
+
+    dataGotedFromServer(page) {
+      try {
+          this.firebaseService.getData(page)
+              .valueChanges()
+              .subscribe(resData => {
+                  console.log(resData);
+                  this.logoText= resData.sub_text;
+                  this.logoTitle= resData.title;
+              },
+              error => {
+                console.log(error, "error");
+              })
+        } catch (e) {
+          console.log(e);
+        }
+  }
 }

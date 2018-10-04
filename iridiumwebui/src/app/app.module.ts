@@ -3,10 +3,13 @@ import { NgModule, ModuleWithProviders } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AngularFontAwesomeModule } from 'angular-font-awesome';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { GalleryModule } from  '@ngx-gallery/core';
-import { LightboxModule } from  '@ngx-gallery/lightbox';
+import { GalleryModule } from '@ngx-gallery/core';
+import { LightboxModule } from '@ngx-gallery/lightbox';
 import { ParticlesModule } from 'angular-particle';
 import { ParticleEffectButtonModule } from "angular-particle-effect-button";
+import { HttpClientModule } from '@angular/common/http';
+import { AngularFireModule } from 'angularfire2';
+import { AngularFireDatabaseModule } from 'angularfire2/database';
 
 import { AppComponent } from './app.component';
 import { LoaderComponent } from './components/loader/loader.component';
@@ -31,7 +34,10 @@ import { HomeBlockComponent } from './container/homeBlock/homeBlock.component';
 import { BlocksComponent } from './components/blocks/blocks.component';
 import { HomeBlockContentComponent } from './container/homeBlockContent/homeBlockContent.component';
 
-import { DataService } from './common/services/dataService.services';
+import { DataService } from './common/services/data.service';
+import { FirebaseService } from './common/services/firebase.service';
+
+import { environment } from '../environments/environment';
 
 @NgModule({
   declarations: [
@@ -60,12 +66,15 @@ import { DataService } from './common/services/dataService.services';
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     BrowserAnimationsModule,
     GalleryModule.forRoot(),
     LightboxModule.forRoot(),
     AngularFontAwesomeModule,
     ParticlesModule,
     ParticleEffectButtonModule,
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFireDatabaseModule,
     RouterModule.forRoot([
       { path: '', component: HomeComponent, data: { state: 'home'} },
       { path: 'home', component: HomeBlockComponent, data: { state: 'homecontent'} },
@@ -85,7 +94,7 @@ import { DataService } from './common/services/dataService.services';
   entryComponents: [
     HomeComponent,
   ],
-  providers: [DataService],
+  providers: [DataService, FirebaseService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

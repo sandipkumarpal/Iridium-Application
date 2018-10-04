@@ -1,38 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Gallery, GalleryItem, ImageItem } from '@ngx-gallery/core';
 import { Lightbox } from '@ngx-gallery/lightbox';
-import { GalleryAnimation } from '../../common/animations/gallery.animation';
+import { FirebaseService } from '../../common/services/firebase.service'
 
-const data = [
-      {
-        "src": "https://picsum.photos/458/354?image=0",
-        "thumbnail": "https://picsum.photos/1200/1024?image=0",
-      },
-      {
-        "src": "https://picsum.photos/458/354?image=1",
-        "thumbnail": "https://picsum.photos/1200/1024?image=1",
-      },
-       {
-        "src": "https://picsum.photos/458/354?image=2",
-        "thumbnail": "https://picsum.photos/1200/1024?image=2",
-      },
-      {
-        "src": "https://picsum.photos/458/354?image=3",
-        "thumbnail": "https://picsum.photos/1200/1024?image=3",
-      },
-      {
-        "src": "https://picsum.photos/458/354?image=4",
-        "thumbnail": "https://picsum.photos/1200/1024?image=4",
-      },
-      {
-        "src": "https://picsum.photos/458/354?image=5",
-        "thumbnail": "https://picsum.photos/1200/1024?image=5",
-      },
-      {
-        "src": "https://picsum.photos/458/354?image=6",
-        "thumbnail": "https://picsum.photos/1200/1024?image=6",
-      }
-  ];
+import { GalleryAnimation } from '../../common/animations/gallery.animation';
 
 @Component({
     selector: 'app-gallery',
@@ -43,21 +14,47 @@ const data = [
         '[@GalleryAnimation]': ''
     }
 })
+// export class GalleryComponent {
+//   courses: any[];
 
+//   constructor(db: AngularFireDatabase) {
+//     db.list('/gallery').valueChanges()
+//       .subscribe(course => {
+//         this.courses = course;
+//         console.log(this.courses);
+//       });
+//   }
+// }
 export class GalleryComponent implements OnInit {
     titlemessage : string = "Gallery";
+    lowerCaseTile: string = this.titlemessage.toLowerCase();
+    galleryData:any[];
     items: GalleryItem[];
-    
-    itemsData = data;
-    constructor(public gallery: Gallery, public lightbox: Lightbox) {
-     }
-    
-    ngOnInit() {
-      this.items = this.itemsData.map(item => {
-        return new ImageItem({ src: item.src, thumb: item.thumbnail });
-      });
-      this.gallery.ref('lightbox').load(this.items);
-      console.log(this.items);
-    }
 
+    constructor(
+      public gallery: Gallery, 
+      public lightbox: Lightbox, 
+      private firebaseService: FirebaseService) { }
+
+    ngOnInit() {
+      this.dataGotedFromServer(this.lowerCaseTile);
+    }
+    dataGotedFromServer(lowerCaseTile) {
+      try {
+        this.firebaseService.getData(lowerCaseTile)
+            .valueChanges()
+            .subscribe(resData => {
+              this.galleryData = resData.data;
+              this.items = this.galleryData.map(item => {
+                return new ImageItem({ src: item.src, thumb: item.thumbnail });
+              });
+              this.gallery.ref('lightbox').load(this.items);
+            },
+            error => {
+              console.log(error, "error");
+            })
+      } catch (e) {
+        console.log(e);
+      }
+    }
 }

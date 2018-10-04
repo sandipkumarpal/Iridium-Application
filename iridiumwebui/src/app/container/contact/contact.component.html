@@ -50,19 +50,17 @@
           </form>
           <div class="address__area">
             <address>
-              <p>N-317A, M.S.Compound, Pollock Road</p>
-              <p>U.Park , Pennsylvania - 16802</p>
-              <p>United States of America</p>
+              <p>{{ address }}</p>
             </address>
             <address>
-              <p><strong>Mr. JASRAJ RATHOD</strong></p>
-              <p><strong>[ Supreme Authority of INDIA ]</strong></p>
-              <p><span>Contact No:</span> 08420745591 / 08167805696</p>
+              <p><strong>{{contact_name}}</strong></p>
+              <p><strong>[ {{ contact_designation }} ]</strong></p>
+              <p><span>Contact No:</span> <br> <span *ngFor= "let number of contact_number">{{ number }} </span></p>
             </address>
             <address>
-              <p><strong>[ Chief Operating Officer ]</strong></p>
-              <p><span>Contact No:</span> 08910393544</p>
-                <p><span>Email:</span> us_amru@live.com, us.atomicmetalresearchunit@gmail.com, mail@iridium.net.in</p>
+              <p><strong>[ {{ contact_officer_designation }} ]</strong></p>
+              <p><span>Contact No:</span> {{ contact_officer_number }}</p>
+                <p><span>Email:</span> <br> <a href="mailto:{{email}}" *ngFor= "let email of contact_email">{{ email }} </a></p>
             </address>
           </div>
         </div>

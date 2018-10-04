@@ -12,78 +12,18 @@
               <div class="col m6">
                   <div class="iridium-table-container">
                       <table cellpadding="0" cellspacing="0" class="iridium-table">
-                          <tbody>
-                            <tr>
-                              <td>ATOMIC NUMBER</td>
-                              <td>77</td>
-                            </tr>
-                            <tr>
-                              <td>ATOMIC WEIGHT</td>
-                              <td>192.2</td>
-                            </tr>
-                            <tr>
-                              <td>STABLE ISOTOPES, MASS UNITS</td>
-                              <td>191.193</td>
-                            </tr>
-                            <tr>
-                              <td>CRYSTAL STRUCTURE</td>
-                              <td>FACE CENTRE CUBIC</td>
-                            </tr>
-                            <tr>
-                              <td>DENSITY AT 20°C</td>
-                              <td>22.41gms/cms</td>
-                            </tr>
-                            <tr>
-                              <td>MELTING POINT</td>
-                              <td>2446+/-3°C</td>
-                            </tr>
-                            <tr>
-                              <td>BOILING POINT</td>
-                              <td>5300*C</td>
-                            </tr>
-                            <tr>
-                              <td>ELETRICAL RESISTIVITY AT 0°C</td>
-                              <td>4.71 MICROHM CM&nbsp;</td>
-                            </tr>
-                            <tr>
-                              <td>THERMAL CONDUCTIVITY (0-100°C)</td>
-                              <td>1.483/cmA&nbsp;</td>
-                            </tr>
-                            <tr>
-                              <td>THERMAL CMF AGAINTS P.T.©1000°C</td>
-                              <td>+12.73 MILLIVOLTS</td>
-                            </tr>
-                            <tr>
-                              <td>HARDNESS (ANNEALED)</td>
-                              <td>200-240kg/mm2(H4)</td>
-                            </tr>
-                            <tr>
-                              <td>MODULUS OF ELASTICITY (E)</td>
-                              <td>516 X 10° MN/m<sup>2</sup></td>
-                            </tr>
-                            <tr>
-                              <td>MODULUS OF RIGIDITY (G) </td>
-                              <td>210 X 10° MN/m<sup>2</sup></td>
-                            </tr>
-                            <tr>
-                              <td>BULK MODULUS (K)</td>
-                              <td>371 X 10° MN/m<sup>2</sup></td>
-                            </tr>
-                            <tr>
-                              <td>POISON'S RATIO</td>
-                              <td>0.26</td>
-                            </tr>
-                            <tr>
-                              <td>TYPICAL TENSITE STRENGTH (ANNEALED)</td>
-                              <td>490-740 MN/m'</td>
-                            </tr>
-                          </tbody>
-                        </table>
+                        <tbody>
+                          <tr *ngFor="let item of tableData; let i = index">
+                            <td>{{ item.table_title }}</td>
+                            <td>{{ item.table_value }}</td>
+                          </tr>
+                        </tbody>
+                      </table>
                   </div>
               </div>
               <div class="col m6">
                 <figure class="iridium-figure">
-                  <img src="https://picsum.photos/1200/1024?image=0" alt="">
+                  <img [src]="tableImage" alt="">
                 </figure>
               </div>
             </div>
