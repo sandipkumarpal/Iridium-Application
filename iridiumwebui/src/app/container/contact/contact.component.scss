@@ -20,6 +20,7 @@
     &__map,
     &__form {
         flex: 0 0 50%;
+        max-width: 50%;
     }
     &__block {
         padding: 40px;
@@ -175,3 +176,48 @@ textarea.materialize-textarea:focus + label {
           }
       }
   }
+
+@media all and (min-width: 1400px) {
+    .contact-title {
+        font-size: 100px;
+    }
+}
+@media all and (max-width: 991px) {
+    .contact-title {
+        font-size: 55px;
+    }
+}
+@media all and (max-width: 767px) {
+    .container-contact__map, 
+    .container-contact__form {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+    .container-contact {
+        display: block;
+    }
+    .contact__map {
+        height: 50vh;
+    }
+    .container-contact__block {
+        height: auto;
+        overflow-y: inherit;
+        position: relative;
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+    .container-page {
+        overflow-y: auto;
+    }
+    .contact-title {
+        margin-top: 0;
+        position: static;
+    }
+    .back_btn {
+        position: absolute;
+        top: -24px;
+        right: 15px;
+        background-color: #3F51B5;
+        margin-top: 0;
+    }
+}

@@ -15,3 +15,55 @@
 .menuButton-active {
     
 }
+.mobile_btn {
+
+}
+.mobile_btn {
+    display: none;
+    cursor: pointer;
+    background-color:#2d0190;
+    width: 48px;
+    text-align: center;
+    height: 48px;
+    border-radius: 50%;
+    color: #fff;
+    line-height: 48px;
+    svg {
+        width: 28px;
+        padding: 13px 5px;
+        color: #fff;
+        display: block;
+        margin: 0 11px;
+    }
+    &:hover,
+    &:focus {
+        background-color: #fff;
+        color: #2d0190;
+        svg {
+            color: #2d0190;
+        }
+    }
+}
+@media all and (max-width: 767px) {
+    .navigation__menu {
+        background-color:#2d0190;
+        width: 220px;
+        padding: 15px 0;
+        position: absolute;
+        top: 100%;
+        right: 0;
+        z-index: 999;
+    }
+    .navigation {
+        padding-right: 0;
+    }
+    .mobile_btn {
+        display: block;
+    }
+}
+@media all and (max-width: 600px) {
+    .header {
+        left: 15px;
+        right: 15px;
+    }
+}

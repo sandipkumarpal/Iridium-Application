@@ -62,7 +62,7 @@
     left: 25px;
     top: 44px;
     width: 46px;
-
+    text-align: center;
     svg {
         width: 20px;
     }
@@ -190,5 +190,113 @@
         max-width: 100%;
         height: auto;
         width: auto;
+    }
+}
+
+@media all and (min-width: 1400px) {
+    .home-content__header h2 {
+        font-size: 130px;
+    }
+    .home-content__text {
+        flex: 0 0 50%;
+        max-width: 50%;
+    }
+    .container-page-article {
+        font-size: 22px;
+    }
+    .blocking-wrap h4 {
+        font-size: 30px;
+    }
+    .home-content-round {
+        min-width: 1000px;
+        min-height: 1000px;
+    }
+    .home-content-round1 {
+        min-width: 700px;
+        min-height: 700px;
+        top: -100px;
+    }
+}
+
+@media all and (max-width: 991px) {
+    .blocking-wrap {
+        figure {
+            max-width: 110px;
+        }
+    }
+    .home-content__header h2 {
+        font-size: 80px;
+    }
+}
+@media all and (max-width: 767px) {
+    .blocking-wrap {
+        figure {
+            max-width: 130px;
+        }
+    }
+    .home-content__header h2 {
+        font-size: 60px;
+        margin-top: 0;
+    }
+    .home-content__figure {
+        padding: 10px;
+        margin: 0 0 20px 0;
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+    .home-content__text {
+        flex: 0 0 100%;
+        max-width: 100%;
+        padding-left: 0;
+    }
+    .home-content__Block {
+        margin-bottom: 30px;
+        display: block;
+    }
+    .home-content__Blocking .row .col {
+        width: 50%;
+    }
+    .blocking-wrap {
+        margin-bottom: 20px;
+    }
+    .home-content__Subblocking {
+        display: block;
+    }
+    .home-content__Subblockingtext,
+    .home-content__Subblockingfigure {
+        max-width: 100%;
+    }
+    .home-content__Subblockingtext {
+        margin-bottom: 20px;
+        padding-left: 0;
+    }
+    .home-content-page {
+        margin-left: 50px;
+        padding: 50px 15px;
+    }
+    .back_btn {
+        left: 1px;
+    }
+    .home-content-round {
+        bottom: -100px;
+        min-width: 400px;
+        min-height: 400px;
+    }
+    .home-content-round1 {
+        min-width: 400px;
+        min-height: 400px;
+    }
+}
+@media all and (max-width: 500px) {
+    .home-content-round1 {
+        min-width: 200px;
+        min-height: 200px;
+    }
+    .home-content__header h2 {
+        font-size: 36px;
+        margin-bottom: 40px;
+    }
+    .home-content__Blocking .row .col {
+        width: 100%;
     }
 }

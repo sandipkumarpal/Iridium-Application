@@ -48,7 +48,39 @@
     }
     &__image {
         max-width: 100%;
+        width: 100%;
         height: auto;
         display: block;
+    }
+}
+@media all and (max-width: 991px) {
+    .gallery__title {
+        font-size: 209px;
+        top: 100px;
+    }
+    .container-gallery {
+        padding-left: 0;
+        padding-right: 0;
+    }
+}
+@media all and (max-width: 767px) {
+    .gallery__title {
+        font-size: 120px;
+    }
+    .gallery {
+        padding-top: 70px;
+    }
+    .container-article {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+}
+@media all and (max-width: 500px) {
+    .gallery__item {
+        flex: 0 0 50%;
+        max-width: 50%;
+    }
+    .gallery__title {
+        font-size: 70px;
     }
 }

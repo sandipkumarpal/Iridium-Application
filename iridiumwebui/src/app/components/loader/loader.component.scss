@@ -291,6 +291,11 @@
     text-align: center;
     padding-bottom: 15px;
   }
+  @media all and (max-width: 600px) {
+    .loading__content__title {
+      font-size: 48px;
+    }
+  }
   
   .loading__content__title .loading__content__word {
     display: inline-block;
@@ -299,12 +304,18 @@
     opacity: 0;
   }
   
+  
   .loading__content__text {
     position: relative;
     font-weight: 700;
     font-size: 30px;
     display: block;
     text-align: center;
+  }
+  @media all and (max-width: 600px) {
+    .loading__content__text {
+      font-size: 24px;
+    }
   }
   .loading__content__text .loading__content__wrapper {
     position: relative;

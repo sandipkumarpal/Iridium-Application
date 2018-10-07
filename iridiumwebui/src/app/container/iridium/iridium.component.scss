@@ -55,3 +55,22 @@
         height: auto;
     }
 }
+@media all and (min-width:1400px) {
+    .container-title h1 {
+        font-size: 120px;
+    }
+}
+
+@media all and (max-width: 991px) {
+    .iridium-table-container {
+        margin-bottom: 30px;
+    }
+    .container-iridium {
+        padding: 150px 0px 40px 0px;
+    }
+}
+@media all and (max-width: 767px) {
+    .container-title h1 {
+        font-size: 50px;
+    }
+}

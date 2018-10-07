@@ -25,3 +25,12 @@
         }
     }
 }
+
+@media all and (max-width: 767px) {
+    .navlists__item {
+        display: block;
+    }
+    .navlists__item a {
+        font-size: 18px;
+    }
+}

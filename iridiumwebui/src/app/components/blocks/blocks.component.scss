@@ -69,3 +69,32 @@
         letter-spacing: 0.04em;
     }
 }
+@media all and (min-width: 1400px) {
+    .homeBlocks {
+        &__title {
+            font-size: 36px;
+        }
+        &__figure {
+            min-height: 300px;
+            img {
+                max-width: 200px;
+            }
+        }
+    }
+}
+@media all and (max-width: 1200px) {
+    .homeBlocks {
+        &__title {
+            font-size: 20px;
+        }
+    }
+}
+@media all and (max-width: 991px) {
+    .homeBlocks {
+        &__figure {
+            img {
+                max-width: 200px;
+            }
+        }
+    }
+}
