@@ -29,6 +29,7 @@
     "angularfire2": "^5.0.2",
     "animejs": "^2.2.0",
     "core-js": "^2.5.4",
+    "emailjs": "^2.2.0",
     "firebase": "^5.5.2",
     "font-awesome": "^4.7.0",
     "hammerjs": "^2.0.8",

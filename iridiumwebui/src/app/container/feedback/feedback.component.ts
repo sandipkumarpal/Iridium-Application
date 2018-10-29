@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Location } from '@angular/common';
 import { FeedbackAnimation } from '../../common/animations/feedback.animation';
+import { FormGroup, FormControl, FormBuilder, Validators } from '@angular/forms';
+import { EmailsendService } from '../../common/services/emailsend.service';
 
 @Component({
     selector: 'app-feedback',
@@ -19,10 +21,28 @@ export class FeedbackComponent implements OnInit {
     width: number = 100;
     height: number = 100;
 
-    constructor(private location: Location) { } 
+    // feedbackForm = new FormGroup({
+    //   feedbackName: new FormControl(''),
+    //   feedbackEmail: new FormControl(''),
+    //   feedbackComment: new FormControl('')
+    // });
+    feedbackForm = this.fb.group({
+      feedbackName: ['', Validators.required],
+      feedbackEmail: ['', [Validators.required, Validators.email]],
+      feedbackComment: [''],
+    });
+
+    constructor(
+      private location: Location,
+      private fb: FormBuilder,
+      private emailsend: EmailsendService ) { }
 
     cancelContact() {
-        this.location.back(); 
+        this.location.back();
+    }
+    feedBackSubmit() {
+      console.warn(this.feedbackForm.value);
+      this.emailsend.addEmail(this.feedbackForm.value);
     }
     ngOnInit() {
         this.myStyle = {
@@ -35,7 +55,7 @@ export class FeedbackComponent implements OnInit {
             'right': 0,
             'bottom': 0,
         };
- 
+
         this.myParams = {
                 particles: {
                     number: {

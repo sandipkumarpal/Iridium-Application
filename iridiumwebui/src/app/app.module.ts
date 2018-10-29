@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, ModuleWithProviders } from '@angular/core';
+import { FormsModule,ReactiveFormsModule } from '@angular/forms';
 import { RouterModule, Routes } from '@angular/router';
 import { AngularFontAwesomeModule } from 'angular-font-awesome';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -31,8 +32,9 @@ import { HomeBlockContentComponent } from './container/homeBlockContent/homeBloc
 
 import { DataService } from './common/services/data.service';
 import { FirebaseService } from './common/services/firebase.service';
-
+import { EmailsendService } from './common/services/emailsend.service';
 import { environment } from '../environments/environment';
+
 
 @NgModule({
   declarations: [
@@ -65,6 +67,8 @@ import { environment } from '../environments/environment';
     ParticleEffectButtonModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireDatabaseModule,
+    FormsModule,
+    ReactiveFormsModule,
     RouterModule.forRoot([
       { path: '', component: HomeComponent, data: { state: 'home'} },
       { path: 'home', component: HomeBlockComponent, data: { state: 'homecontent'} },
@@ -80,7 +84,7 @@ import { environment } from '../environments/environment';
   entryComponents: [
     HomeComponent,
   ],
-  providers: [DataService, FirebaseService],
+  providers: [DataService, FirebaseService, EmailsendService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

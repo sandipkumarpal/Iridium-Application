@@ -12,21 +12,23 @@
                     <a (click)="cancelContact()" class="back_btn">
                             <svg role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512" class="svg-inline--fa fa-angle-right fa-w-8 fa-2x"><path fill="currentColor" d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z" class=""></path></svg>
                     </a>
-                    <form action="/" method="post" enctype="multipart/form-data" name="f2" onsubmit="return">
+                    <form [formGroup]="feedbackForm" (ngSubmit)="feedBackSubmit()">
                         <div class="input-field">
-                            <input id="name" type="text" class="validate">
+                            <input id="name" name="feedbackName" type="text" class="validate" [(ngModel)]="feedbackName" formControlName="feedbackName" required>
                             <label for="name">Name *</label>
+                            <span data-error="wrong" *ngIf="!feedbackForm.controls['feedbackName'].valid && feedbackForm.controls['feedbackName'].touched" class="helper-text alert alert-danger">Please type your name</span>
                         </div>
                         <div class="input-field">
-                            <input id="email" type="email" class="validate">
+                            <input id="email" type="email" name="feedbackEmail" class="validate" [(ngModel)]="feedbackEmail" formControlName="feedbackEmail" required>
                             <label for="email">Email: *</label>
+                            <span data-error="wrong" *ngIf="!feedbackForm.controls['feedbackEmail'].valid && feedbackForm.controls['feedbackEmail'].touched" class="helper-text alert alert-danger">Please type your valid Email Id</span>
                         </div>
                         <div class="input-field">
-                            <textarea id="comment" name="comment" class="materialize-textarea"></textarea>
+                            <textarea id="comment" name="feedbackComment" class="materialize-textarea" [(ngModel)]="feedbackComment" formControlName="feedbackComment"></textarea>
                             <label for="comment">Comment</label>
                         </div>
                         <div class="input-button">
-                            <input type="button" value="Submit" class="btn btn-large btn__submit btn-block">
+                            <input [disabled]="!feedbackForm.valid" type="button" value="Submit" class="btn btn-large btn__submit btn-block" (click)="feedBackSubmit()">
                         </div>
                     </form>
                 </div>

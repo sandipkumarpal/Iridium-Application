@@ -26,11 +26,11 @@
     &__block {
         padding: 40px;
         background-color: #181818;
-        background-image: url(../../../assets/images/feedbacktexture.png); 
+        background-image: url(../../../assets/images/feedbacktexture.png);
         color: #fff;
         height: 100vh;
         overflow-y: auto;
-        display: flex;  
+        display: flex;
         align-items: center;
         flex-wrap: wrap;
         form {
@@ -74,18 +74,18 @@
         font-size: 13px;
     }
 }
-input:not([type]), 
-input[type=text]:not(.browser-default), 
-input[type=password]:not(.browser-default), 
-input[type=email]:not(.browser-default), 
-input[type=url]:not(.browser-default), 
-input[type=time]:not(.browser-default), 
-input[type=date]:not(.browser-default), 
-input[type=datetime]:not(.browser-default), 
-input[type=datetime-local]:not(.browser-default), 
-input[type=tel]:not(.browser-default), 
-input[type=number]:not(.browser-default), 
-input[type=search]:not(.browser-default), 
+input:not([type]),
+input[type=text]:not(.browser-default),
+input[type=password]:not(.browser-default),
+input[type=email]:not(.browser-default),
+input[type=url]:not(.browser-default),
+input[type=time]:not(.browser-default),
+input[type=date]:not(.browser-default),
+input[type=datetime]:not(.browser-default),
+input[type=datetime-local]:not(.browser-default),
+input[type=tel]:not(.browser-default),
+input[type=number]:not(.browser-default),
+input[type=search]:not(.browser-default),
 textarea.materialize-textarea {
     height: 48px;
     border: 2px solid #fff9f8;
@@ -149,6 +149,10 @@ textarea.materialize-textarea:focus + label {
     position: absolute;
     right: -230px;
     z-index: 2;
+}
+.helper-text {
+  font-size: 12px;
+  color: #f00;
 }
 
 @media all and (max-width: 767px) {
