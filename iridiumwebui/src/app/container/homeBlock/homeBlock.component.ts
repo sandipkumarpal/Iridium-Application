@@ -17,9 +17,10 @@ import { homeBlockAnimation } from '../../common/animations/homeBlock.animation'
 export class HomeBlockComponent {
     page: string = 'home';
     data: any;
+    totalData: any;
 
     constructor(
-        private dataservice : DataService, 
+        private dataservice : DataService,
         private firebaseService: FirebaseService
         ) {
         // this.totalData = dataservice.getDataFromJson();
@@ -29,30 +30,30 @@ export class HomeBlockComponent {
         this.dataGotedFromServer(this.page);
     }
     dataGotedFromServer(page) {
-        // try {
-        //   this.dataservice.getDataFromJson()
-        //     .subscribe(resp => {
-        //       console.log(resp, "res");
-        //       this.totalData = resp
-        //     },
-        //       error => {
-        //         console.log(error, "error");
-        //       })
-        // } catch (e) {
-        //   console.log(e);
-        // }
         try {
-            this.firebaseService.getData(page)
-                .valueChanges()
-                .subscribe(resData => {
-                    console.log(resData);
-                    this.data = resData.data;
-                },
-                error => {
-                  console.log(error, "error");
-                })
-          } catch (e) {
-            console.log(e);
-          }
+          this.dataservice.getDataFromJson(page)
+            .subscribe(resp => {
+              this.data = resp;
+              console.log(resp);
+            },
+              error => {
+                console.log(error, "error");
+              })
+        } catch (e) {
+          console.log(e);
+        }
+        // try {
+        //     this.firebaseService.getData(page)
+        //         .valueChanges()
+        //         .subscribe(resData => {
+        //             console.log(resData);
+        //             this.data = resData.data;
+        //         },
+        //         error => {
+        //           console.log(error, "error");
+        //         })
+        //   } catch (e) {
+        //     console.log(e);
+        //   }
     }
 }
