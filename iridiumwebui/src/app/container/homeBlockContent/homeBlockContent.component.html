@@ -13,47 +13,50 @@
                     <header class="home-content__header">
                         <h2>{{title}}</h2>
                     </header>
-                    <div class="home-content__Block">
-                        <figure class="home-content__figure">
-                            <ng-template [ngIf]="image">
-                                <img [src]="image" />
-                            </ng-template>
-                        </figure>
-                        <div class="home-content__text">
-                            <ng-template [ngIf]="content">
-                                {{content}}
-                            </ng-template>
-                        </div>
-                    </div>
-                    <ng-template [ngIf]="blocks">
-                        <div class="home-content__Blocking">
-                            <div class="row">
-                                <div class="col m3" *ngFor="let block of blocks">
-                                    <div class="blocking-wrap">
-                                        <figure>
-                                            <span [ngStyle]="{'background-color': color}"></span>
-                                            <img [src]="block.thumb" />
-                                        </figure>
-                                        <h4>{{block.title}}</h4>
-                                    </div>
-                                </div>
+                    <div class="home-content__Block homeBlockAnimation">
+                      <ng-template [ngIf]="content">
+                          <ng-template [ngIf]="image">
+                              <figure class="home-content__figure">
+                                  <img [src]="image" />
+                              </figure>
+                          </ng-template>
+                          <ng-template [ngIf]="content">
+                            <div class="home-content__text" [ngClass]="!image ? 'full' : ''">
+                                <ng-template [ngIf]="content.table"; [ngIfElse]="contentTable">
+                                  <div class="iridium-table-container">
+                                    <table cellpadding="0" cellspacing="0" class="iridium-table">
+                                      <tbody>
+                                        <tr *ngFor="let item of content.table; let i = index">
+                                          <td [innerHTML]="item.table_title"></td>
+                                          <td [innerHTML]="item.table_value"></td>
+                                        </tr>
+                                      </tbody>
+                                    </table>
+                                  </div>
+                                </ng-template>
+                                <ng-template #contentTable>
+                                  <div [innerHTML]="content"></div>
+                                </ng-template>
                             </div>
-                        </div>
-                    </ng-template>
-                    <ng-template [ngIf]="subContent">
-                        <div class="home-content__Subblocking">
-                            <ng-template [ngIf]="subContent">
-                                <div class="home-content__Subblockingtext" [ngClass]="!subImage ? 'full' : ''">
-                                    {{subContent}}
-                                </div>
-                            </ng-template>
-                            <ng-template [ngIf]="subImage">
-                                <figure class="home-content__Subblockingfigure">
-                                    <img [src]="subImage" />
-                                </figure>
-                            </ng-template>
-                        </div>
-                    </ng-template>
+                          </ng-template>
+                      </ng-template>
+                    </div>
+                    <div class="homeBlockAnimation2">
+                      <ng-template [ngIf]="subContent">
+                          <div class="home-content__Subblocking" >
+                              <ng-template [ngIf]="subContent">
+                                  <div class="home-content__Subblockingtext" [ngClass]="!subImage ? 'full' : ''">
+                                      <div [innerHTML]="subContent"></div>
+                                  </div>
+                              </ng-template>
+                              <ng-template [ngIf]="subImage">
+                                  <figure class="home-content__Subblockingfigure">
+                                      <img [src]="subImage" />
+                                  </figure>
+                              </ng-template>
+                          </div>
+                      </ng-template>
+                    </div>
                 </div>
             </article>
         </div>

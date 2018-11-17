@@ -2,7 +2,7 @@
     position: relative;
     z-index: 1;
     text-align: center;
-    margin-bottom: 25px;
+    margin-bottom: 35px;
     &__background {
         position: absolute;
         top: 0;
@@ -12,7 +12,7 @@
         z-index: -1;
         &__inner {
             background-color: #ff9900;
-            min-height: 310px;
+            min-height: 300px;
             width: 25%;
             display: inline-block;
             vertical-align: top;
@@ -28,7 +28,6 @@
         }
     }
     &__links {
-        cursor: pointer;
         padding: 20px;
         &:hover {
             .homeBlocks__background__inner {
@@ -51,7 +50,7 @@
     &__figure {
         align-items: center;
         margin: 0 0 20px;
-        min-height: 250px;
+        min-height: 200px;
         display: flex;
         text-align: center;
         justify-content: center;
@@ -63,7 +62,7 @@
     &__title {
         color: #fff;
         font-family: 'antonregular', sans-serif;
-        font-size: 28px;
+        font-size: 22px;
         margin: 0;
         transition: all 0.35s ease;
         letter-spacing: 0.04em;
@@ -72,7 +71,7 @@
 @media all and (min-width: 1400px) {
     .homeBlocks {
         &__title {
-            font-size: 36px;
+            font-size: 30px;
         }
         &__figure {
             min-height: 300px;

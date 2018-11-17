@@ -1,18 +1,19 @@
 .navlists {
-    text-align: left;
+    text-align: center;
     margin: 0;
 
     &__item {
-        display: inline-block;
-        vertical-align: top;
-
+        display: block;
+        margin-bottom: 2px;
         a {
             display: block;
             color: #fff;
-            font-size: 22px;
-            padding: 10px 22px;
+            font-size: 42px;
+            padding: 10px;
             font-family: 'antonregular', sans-serif;
             line-height: 1.2;
+            transition: all 0.35s ease;
+            opacity: 1;
             span {
                 letter-spacing: inherit;
                 font-size: 11px;
@@ -21,6 +22,10 @@
                 text-transform: none;
                 font-family: 'robotomedium', sans-serif;
                 color: #d1d1d1;
+            }
+            &:hover,
+            &:focus {
+              opacity: 0.7;
             }
         }
     }
@@ -32,5 +37,14 @@
     }
     .navlists__item a {
         font-size: 18px;
+        color: #2d0190;
     }
+}
+
+@media all and (min-width: 1400px) {
+  .navlists__item a {
+    font-size: 50px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+  }
 }

@@ -23,27 +23,49 @@
 }
 
 .home__title {
-    font-size: 12vh;
+    font-size: 150px;
     color: #fff;
     font-family: 'antonregular', sans-serif;
     margin: 0;
     line-height: 1.1;
     span {
         display: block;
-        font-size: 5vh;
+        font-size: 48px;
         line-height: 1;
         font-family: 'robotolight', sans-serif;
         margin-bottom: 10px;
         margin-top: 5px;
     }
+    .text1 {
+      margin-bottom: 40px;
+    }
+    .text2 {
+      margin-bottom: 35px;
+      margin-top: 15px;
+    }
 }
 @media all and (min-width: 1400px) {
     .home__title {
-        font-size: 16vh;
+        font-size: 180px;
         span {
-            font-size: 7vh;
+            font-size: 55px;
         }
     }
+}
+@media all and (max-width: 1200px) {
+  .home__title{
+    font-size: 120px;
+  }
+}
+@media all and (max-width: 991px) {
+  .home__title{
+    font-size: 100px;
+  }
+}
+@media all and (max-width: 767px) {
+  .home__title{
+    font-size: 80px;
+  }
 }
 @media all and (max-width: 650px) {
     .home__title {
@@ -60,6 +82,13 @@
         padding-left: 15px;
         padding-right: 15px;
     }
+    .home__title .text2{
+      margin-bottom: 20px;
+      margin-top: 10px;
+    }
+    .home__title .text1 {
+      margin-bottom: 10px;
+  }
 }
 @media all and (max-width: 500px) {
     .home__title {
@@ -88,7 +117,6 @@
         padding: 10px 30px;
         border: none;
         height: 60px;
-        cursor: pointer;
     }
     svg {
         display: inline-block;
@@ -128,7 +156,7 @@
         button {
             font-size: 14px;
             line-height: 48px;
-            padding: 0 30px;
+            padding: 0 18px;
             height: 48px;
             vertical-align: top;
         }

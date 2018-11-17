@@ -14,17 +14,18 @@
     width: 100%;
     padding-left: 30px;
     padding-right: 30px;
-    padding-top: 150px;
-    padding-bottom: 30px;
+    padding-top: 30px;
+    padding-bottom: 0;
     background-color: #311b92;
 }
 .homeBlockContentWrap {
-    padding-left: 300px;
+    padding-left: 25%;
 }
 .titleRotated {
     position: relative;
     float: left;
-    margin-top: 100px;
+    margin-top: 0;
+    width: 25%;
     &__title {
         transform: rotate(-90deg);
         font-family: 'antonregular', sans-serif;
@@ -33,6 +34,7 @@
         color: #ffffff;
         text-align: left;
         line-height: 1;
+        margin-left: -33px;
     }
 }
 .roundTexture {
@@ -46,6 +48,7 @@
     min-width: 600px;
     min-height: 600px;
     z-index: -1;
+    user-select: none;
 }
 .roundTexture__bottom {
     position: fixed;
@@ -56,6 +59,7 @@
     min-width: 600px;
     min-height: 600px;
     z-index: -1;
+    user-select: none;
 }
 @media all and (min-width: 1400px) {
     .roundTexture {
@@ -68,10 +72,9 @@
         min-height: 700px;
     }
     .homeBlockContentWrap {
-        padding-left: 450px;
+        // padding-left: 450px;
     }
     .titleRotated {
-        margin-top: 200px;
         &__title {
             font-size: 200px;
         }
@@ -82,19 +85,24 @@
         width: 33.333%;
     }
 }
+@media all and (max-width: 991px) and (min-width: 768px) {
+  .row .col.l3.dataContent__col {
+      width: 50%;
+  }
+}
 @media all and (max-width: 991px) {
     .titleRotated {
         float: none;
         text-align: center;
-        margin-top: 50px;
-        margin-bottom: 50px;
+        // margin-top: 50px;
+        // margin-bottom: 50px;
         &__title {
             transform: rotate(0deg);
             text-align: center;
         }
     }
     .homeBlockContentWrap {
-        padding-left: 0;
+        padding-left: 250px;
     }
 }
 
@@ -110,14 +118,27 @@
         padding-left: 15px;
         padding-right: 15px;
         box-sizing: border-box;
+        overflow-y: inherit;
+        position: relative;
+        padding-bottom: 30px;
     }
     .roundTexture {
         top: -200px;
         min-width: 400px;
         min-height: 400px;
+        z-index: 1;
     }
     .roundTexture__bottom {
         min-width: 400px;
         min-height: 400px;
+        z-index: 1;
     }
+    .homeBlockContentWrap {
+      padding-left: 0;
+      padding-top: 120px;
+   }
+   .container-page {
+     position: relative;
+   }
+
 }

@@ -24,11 +24,11 @@ export const homeBlockAnimation = trigger('homeBlockAnimation', [
       style({ transform: 'translateX(-25px)', opacity: 0 }),
       animate('1s cubic-bezier(.75,-0.48,.26,1.52)', style({ transform: 'translateX(0px)', opacity: 1})),
     ]),
-    query('.homeBlockContentWrap', stagger(400, [
+    query('.dataContent__animation .col', stagger(400, [
       style({ transform: 'translateY(25px)', opacity: 0 }),
       animate('1s cubic-bezier(.75,-0.48,.26,1.52)', style({transform: 'translateY(0px)', opacity: 1})),
     ])),
-     
+
   ]),
   transition(':leave', [
     query('.header-logo', [
@@ -41,7 +41,7 @@ export const homeBlockAnimation = trigger('homeBlockAnimation', [
     ]),
     query('.homeBlockContentWrap', [
       style({ transform: 'translateY(0px)', opacity: 1 }),
-      animate('1s cubic-bezier(.75,-0.48,.26,1.52)', style({transform: 'translateY(25px)', opacity: 0})),
-    ]), 
+      animate('1s cubic-bezier(.75,-0.48,.26,1.52)', style({transform: 'translateY(15px)', opacity: 0})),
+    ]),
   ])
 ]);

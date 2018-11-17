@@ -36,10 +36,10 @@
         display: flex;
         align-items: flex-start;
         margin-bottom: 100px;
+        color: #fff;
     }
     &__figure {
-        background-color: #fff;
-        padding: 20px;
+        padding: 0;
         margin: 0 0 0 -100px;
         text-align: center;
         flex: 0 0 50%;
@@ -54,6 +54,7 @@
         flex: 0 0 60%;
         max-width: 60%;
         padding-left: 20px;
+        padding-top: 20px;
     }
 }
 
@@ -168,20 +169,21 @@
 .home-content__Subblocking {
     display: flex;
     flex-wrap: wrap;
+    color: #fff;
 }
 .home-content__Subblockingtext {
     flex: 0 0 60%;
     max-width: 60%;
     padding-right: 20px;
 }
-.home-content__Subblockingtext.full {
+.home-content__Subblockingtext.full,
+.home-content__text.full {
     flex: 0 0 100%;
     max-width: 100%;
     padding-right: 0;
 }
 .home-content__Subblockingfigure {
-    background-color: #fff;
-    padding: 20px;
+    padding: 0;
     margin: 0;
     text-align: center;
     flex: 0 0 40%;
@@ -191,6 +193,33 @@
         height: auto;
         width: auto;
     }
+}
+
+.iridium-table {
+  background-color: #1d1d1d;
+  td, th {
+      padding: 10px;
+      font-size: 15px;
+  }
+  tr {
+      border-bottom: 1px solid rgba(226, 226, 226, 0.12);
+  }
+}
+
+.iridium-figure {
+  margin: 0;
+  img {
+      max-width: 100%;
+      height: auto;
+  }
+}
+@media all and (max-width: 991px) {
+  .iridium-table-container {
+      margin-bottom: 30px;
+  }
+  .container-iridium {
+      padding: 150px 0px 40px 0px;
+  }
 }
 
 @media all and (min-width: 1400px) {
@@ -259,16 +288,19 @@
     .blocking-wrap {
         margin-bottom: 20px;
     }
-    .home-content__Subblocking {
-        display: block;
-    }
     .home-content__Subblockingtext,
     .home-content__Subblockingfigure {
         max-width: 100%;
+        flex: 0 0 100%;
+    }
+    .home-content__Subblockingfigure {
+      order: 1;
     }
     .home-content__Subblockingtext {
         margin-bottom: 20px;
         padding-left: 0;
+        padding-right: 0;
+        order: 2;
     }
     .home-content-page {
         margin-left: 50px;

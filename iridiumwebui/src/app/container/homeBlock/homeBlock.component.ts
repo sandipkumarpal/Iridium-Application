@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit, Input, ViewChild } from '@angular/core';
 import { DataService } from '../../common/services/data.service';
 import { FirebaseService } from '../../common/services/firebase.service';
 import { homeBlockAnimation } from '../../common/animations/homeBlock.animation';
@@ -14,11 +14,10 @@ import { homeBlockAnimation } from '../../common/animations/homeBlock.animation'
     providers: [DataService]
 })
 
-export class HomeBlockComponent {
+export class HomeBlockComponent implements OnInit {
     page: string = 'home';
-    data: any;
+    data: any = [];
     totalData: any;
-
     constructor(
         private dataservice : DataService,
         private firebaseService: FirebaseService
@@ -30,30 +29,30 @@ export class HomeBlockComponent {
         this.dataGotedFromServer(this.page);
     }
     dataGotedFromServer(page) {
-        try {
-          this.dataservice.getDataFromJson(page)
-            .subscribe(resp => {
-              this.data = resp;
-              console.log(resp);
-            },
-              error => {
-                console.log(error, "error");
-              })
-        } catch (e) {
-          console.log(e);
-        }
         // try {
-        //     this.firebaseService.getData(page)
-        //         .valueChanges()
-        //         .subscribe(resData => {
-        //             console.log(resData);
-        //             this.data = resData.data;
-        //         },
-        //         error => {
-        //           console.log(error, "error");
-        //         })
-        //   } catch (e) {
-        //     console.log(e);
-        //   }
+        //   this.dataservice.getDataFromJson(page)
+        //     .subscribe(resp => {
+        //       this.data = resp;
+        //       console.log(resp);
+        //     },
+        //       error => {
+        //         console.log(error, "error");
+        //       })
+        // } catch (e) {
+        //   console.log(e);
+        // }
+        try {
+            this.firebaseService.getData(page)
+                .valueChanges()
+                .subscribe(resData => {
+                    console.log(resData);
+                    this.data = resData.data;
+                },
+                error => {
+                  console.log(error, "error");
+                })
+          } catch (e) {
+            console.log(e);
+          }
     }
 }

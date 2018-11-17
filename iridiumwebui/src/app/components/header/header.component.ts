@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild, Input } from '@angular/core';
 import { headerAnimation } from '../../common/animations/header.animation';
 
 @Component({
@@ -12,9 +12,12 @@ import { headerAnimation } from '../../common/animations/header.animation';
 })
 
 export class HeaderComponent {
-    showMenu: boolean;
+    showMenu: boolean = true;
     constructor() {}
     menuToggle() {
         this.showMenu = !this.showMenu;
+    }
+    ngOnInit() {
+
     }
 }

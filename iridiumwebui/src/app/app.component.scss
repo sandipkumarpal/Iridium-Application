@@ -4,5 +4,11 @@
 
 .page {
     // @include rem(margin, 0 100 0 0);
-        
+
+}
+.titleRotated {
+  display: none;
+}
+.home .titleRotated {
+  display: block;
 }

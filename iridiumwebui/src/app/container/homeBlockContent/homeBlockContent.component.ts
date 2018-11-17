@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { FirebaseService } from '../../common/services/firebase.service';
-import { homeBlockContentAnimation } from '../../common/animations/homeBlockContent.animation'; 
+import { homeBlockContentAnimation } from '../../common/animations/homeBlockContent.animation';
 
 @Component({
     selector: 'app-homeBlockContent',
@@ -17,7 +17,7 @@ export class HomeBlockContentComponent implements OnInit {
     page: string = 'home';
     data: any;
     color: string;
-    content: string;
+    content: any;
     image: string;
     title: string;
     subContent: string;
@@ -25,7 +25,7 @@ export class HomeBlockContentComponent implements OnInit {
     blocks: any[];
 
     constructor(
-        private route: ActivatedRoute, 
+        private route: ActivatedRoute,
         private firebaseService: FirebaseService) { }
 
     ngOnInit() {
@@ -54,6 +54,6 @@ export class HomeBlockContentComponent implements OnInit {
             console.log(e);
         }
 
-        
+
     }
 }

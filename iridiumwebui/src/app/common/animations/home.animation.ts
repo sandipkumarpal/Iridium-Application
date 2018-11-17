@@ -6,7 +6,7 @@ export const homeAnimation = trigger('homeAnimation', [
     query('.homeBubble', style({ opacity: 0 })),
     query('.homeLoader', style({ opacity: 0 })),
     query('.home__center__Block', style({ opacity: 0 })),
-    
+
     query('.homeLoader', [
       style({ transform: 'translate(-50%, -50%) scale(0)' }),
       animate('1s cubic-bezier(.75,-0.48,.26,1.52)', style({transform: 'translate(-50%, -50%) scale(1)', opacity: 1})),
@@ -27,7 +27,7 @@ export const homeAnimation = trigger('homeAnimation', [
       style({ opacity: 0 }),
       animate('1s cubic-bezier(.75,-0.48,.26,1.52)', style({opacity: 1})),
     ]),
-    
+
   ]),
   transition(':leave', [
     query('.header-logo', [
@@ -36,11 +36,11 @@ export const homeAnimation = trigger('homeAnimation', [
     ]),
     query('.home__center__Block', [
       style({ transform: 'translateY(-50%) scale(1)', opacity: 1 }),
-      animate('0.5s ease-out', style({transform: 'translateY(-50%) scale(0.5)', opacity: 0})),
+      animate('1s ease-out', style({transform: 'translateY(-50%) scale(0.5)', opacity: 0})),
     ]),
     query('.homeLoader', [
       style({ transform: 'translate(-50%, -50%) scale(1)', opacity: 1 }),
       animate('0.5s cubic-bezier(.75,-0.48,.26,1.52)', style({transform: 'translate(-50%, -50%) scale(0.5)', opacity: 0})),
-    ]),      
+    ]),
   ])
 ]);

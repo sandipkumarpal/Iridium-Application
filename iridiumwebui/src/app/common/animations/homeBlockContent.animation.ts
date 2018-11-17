@@ -36,6 +36,14 @@ export const homeBlockContentAnimation = trigger('homeBlockContentAnimation', [
       style({ transform: 'translateY(-25px)', opacity: 0 }),
       animate('1s cubic-bezier(.75,-0.48,.26,1.52)', style({transform: 'translateY(0)', opacity: 1})),
     ])),
+    query('.homeBlockAnimation', [
+      style({ transform: 'translateY(-25px)', opacity: 0 }),
+      animate('1s cubic-bezier(.75,-0.48,.26,1.52)', style({transform: 'translateY(0)', opacity: 1})),
+    ]),
+    query('.homeBlockAnimation2', [
+      style({ transform: 'translateY(-25px)', opacity: 0 }),
+      animate('1s cubic-bezier(.75,-0.48,.26,1.52)', style({transform: 'translateY(0)', opacity: 1})),
+    ]),
     query('.home-content__figure', stagger(300, [
       style({ transform: 'translateX(-25px)', opacity: 0 }),
       animate('0.8s cubic-bezier(.75,-0.48,.26,1.52)', style({transform: 'translateX(0)', opacity: 1})),
@@ -94,6 +102,6 @@ export const homeBlockContentAnimation = trigger('homeBlockContentAnimation', [
       style({ opacity: 1 }),
       animate('0.5s linear', style({opacity: 0})),
     ])),
-    
+
   ])
 ]);

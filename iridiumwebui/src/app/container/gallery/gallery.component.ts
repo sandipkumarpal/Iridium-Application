@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Location } from '@angular/common';
 import { Gallery, GalleryItem, ImageItem } from '@ngx-gallery/core';
 import { Lightbox } from '@ngx-gallery/lightbox';
 import { FirebaseService } from '../../common/services/firebase.service'
@@ -32,8 +33,9 @@ export class GalleryComponent implements OnInit {
     items: GalleryItem[];
 
     constructor(
-      public gallery: Gallery, 
-      public lightbox: Lightbox, 
+      private location: Location,
+      public gallery: Gallery,
+      public lightbox: Lightbox,
       private firebaseService: FirebaseService) { }
 
     ngOnInit() {
@@ -56,5 +58,9 @@ export class GalleryComponent implements OnInit {
       } catch (e) {
         console.log(e);
       }
+    }
+
+    clickGoToBack() {
+      this.location.back();
     }
 }

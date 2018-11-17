@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Location } from '@angular/common';
+import { FormGroup, FormControl, FormBuilder, Validators } from '@angular/forms';
 import { FirebaseService } from '../../common/services/firebase.service';
 import { ContactAnimation } from '../../common/animations/contact.animation';
 
@@ -25,13 +26,52 @@ export class ContactComponent implements OnInit {
     contact_number: any[];
     numbers: any;
 
-    constructor(private location: Location, private firebaseService: FirebaseService) { }
+    myStyle: object = {};
+    myParams: object = {};
+    width: number = 100;
+    height: number = 100;
+
+    feedbackForm = this.fb.group({
+      feedbackName: ['', Validators.required],
+      feedbackEmail: ['', [Validators.required, Validators.email]],
+      feedbackComment: [''],
+    });
+
+    constructor(
+      private location: Location,
+      private fb: FormBuilder,
+      private firebaseService: FirebaseService) { }
 
     ngOnInit() {
         this.dataGotedFromServer(this.lowerCaseTile);
+
+        this.myStyle = {
+          'position': 'fixed',
+          'width': '50%',
+          'height': '100%',
+          'z-index': 1,
+          'top': 0,
+          'left': 0,
+          'right': 0,
+          'bottom': 0,
+      };
+
+      this.myParams = {
+              particles: {
+                  number: {
+                      value: 200,
+                  },
+                  color: {
+                      value: '#fff'
+                  },
+                  shape: {
+                      type: 'triangle',
+                  },
+          }
+      };
     }
     cancelContact() {
-        this.location.back(); 
+        this.location.back();
     }
     dataGotedFromServer(lowerCaseTile) {
         try {

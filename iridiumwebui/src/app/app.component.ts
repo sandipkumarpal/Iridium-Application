@@ -1,12 +1,16 @@
-import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { Component, OnInit, ViewChild, Renderer2 } from '@angular/core';
+import { ActivatedRoute, Router, NavigationStart } from '@angular/router';
 import { routerTransition } from './common/animations/router.animations';
+import { AppAnimation } from './common/animations/app.animation';
 
 @Component({
   selector: 'app-root',
-  animations: [ routerTransition ],
+  animations: [ routerTransition, AppAnimation ],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
+  host: {
+    '[@AppAnimation]': ''
+},
 })
 export class AppComponent implements OnInit {
   title = 'iridiumwebui';
@@ -19,11 +23,26 @@ export class AppComponent implements OnInit {
     }
     return outlet.activatedRouteData.state;
   }
-  
+  previousUrl: string;
+
+  constructor(private renderer: Renderer2, private router: Router) {
+    this.router.events
+      .subscribe((event) => {
+        if (event instanceof NavigationStart) {
+          if (this.previousUrl) {
+            this.renderer.removeClass(document.body, this.previousUrl);
+          }
+          let currentUrlSlug = event.url.slice(1)
+          if (currentUrlSlug) {
+            this.renderer.addClass(document.body, currentUrlSlug);
+          }
+          this.previousUrl = currentUrlSlug;
+        }
+      });
+
+  }
+
   ngOnInit() {
-    setInterval(() => {
-      this.loader = false;
-    }, 9000);
 
   }
 }

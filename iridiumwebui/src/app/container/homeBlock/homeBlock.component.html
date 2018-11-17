@@ -1,28 +1,23 @@
-<app-header></app-header>
 <section class="container-page homeBlock">
     <div class="container-wrapper">
         <div class="roundTexture"></div>
         <div class="roundTexture__bottom"></div>
         <article class="container-article">
             <div class="container-fluid">
-                <header class="titleRotated">
-                    <h2 class="titleRotated__title">Home</h2>
-                </header>
                 <div class="homeBlockContentWrap">
-                    <div class="row">                    
+                    <div class="row">
                         <div class="col m6 s12 l3 dataContent__col" *ngFor="let dataContent of data">
                             <div class="dataContent__animation">
-                                <app-blocks 
+                                <app-blocks
                                     [id]="dataContent.id"
                                     [color]= "dataContent.color"
-                                    [link]="dataContent.title" 
-                                    [title]="dataContent.title" 
-                                    [image]="dataContent.image">
+                                    [link]="dataContent.title"
+                                    [title]="dataContent.title"
+                                    [image]="dataContent.icon">
                                 </app-blocks>
                             </div>
                         </div>
                     </div>
-                    <!-- <ng-template #loading>Loading User Data...</ng-template> -->
                 </div>
             </div>
         </article>

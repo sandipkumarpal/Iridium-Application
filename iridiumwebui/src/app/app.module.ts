@@ -34,6 +34,8 @@ import { DataService } from './common/services/data.service';
 import { FirebaseService } from './common/services/firebase.service';
 import { EmailsendService } from './common/services/emailsend.service';
 import { environment } from '../environments/environment';
+import { FooterComponent } from './components/footer/footer.component';
+import { SoundComponent } from './components/sound/sound.component';
 
 
 @NgModule({
@@ -54,7 +56,9 @@ import { environment } from '../environments/environment';
     HomeBubbleComponent,
     HomeBlockComponent,
     BlocksComponent,
-    HomeBlockContentComponent
+    HomeBlockContentComponent,
+    FooterComponent,
+    SoundComponent
   ],
   imports: [
     BrowserModule,
@@ -76,7 +80,6 @@ import { environment } from '../environments/environment';
       { path: 'contact', component: ContactComponent, data: { state: 'contact'} },
       { path: 'feedback', component: FeedbackComponent, data: { state: 'feedback'} },
       { path: 'gallery', component: GalleryComponent, data: { state: 'gallery'} },
-      { path: 'iridium', component: IridiumComponent, data: { state: 'iridium'} },
       { path: '**', component: NotFoundComponent, data: { state: 'notfound'} }
     ]),
     // SlickCarouselModule
