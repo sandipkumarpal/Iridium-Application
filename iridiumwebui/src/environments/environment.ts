@@ -11,10 +11,9 @@ export const environment = {
     projectId: "amru-b0d8f",
     storageBucket: "amru-b0d8f.appspot.com",
     messagingSenderId: "400619356180"
-  }
+  },
+  dataURL : "http://universesofttechnologies.in/usmetal/index.php/contents/"
 };
-
-export const dataURL = "http://universesofttechnologies.in/usmetal/index.php/contents/";
 
 /*
  * In development mode, to ignore zone related error stack frames such as

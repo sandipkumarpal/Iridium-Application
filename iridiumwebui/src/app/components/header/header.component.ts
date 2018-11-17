@@ -12,7 +12,7 @@ import { headerAnimation } from '../../common/animations/header.animation';
 })
 
 export class HeaderComponent {
-    showMenu: boolean = true;
+    showMenu: boolean = false;
     constructor() {}
     menuToggle() {
         this.showMenu = !this.showMenu;
