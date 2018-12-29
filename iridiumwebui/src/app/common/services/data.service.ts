@@ -15,6 +15,7 @@ export class DataService {
   constructor(private http: HttpClient){ }
 
   getDataFromJson(page){
+    console.log(environment.dataURL + page);
     return this.http.get(environment.dataURL + page, httpOptions);
   }
 }

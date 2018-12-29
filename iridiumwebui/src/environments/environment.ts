@@ -12,7 +12,7 @@ export const environment = {
     storageBucket: "amru-b0d8f.appspot.com",
     messagingSenderId: "400619356180"
   },
-  dataURL : "http://universesofttechnologies.in/usmetal/index.php/contents/"
+  dataURL : "http://universesofttechnologies.in/usmetal/index.php/api/contents/"
 };
 
 /*

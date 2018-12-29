@@ -1,6 +1,6 @@
 import { Component, OnInit, Input, ViewChild } from '@angular/core';
 import { DataService } from '../../common/services/data.service';
-import { FirebaseService } from '../../common/services/firebase.service';
+import { map } from 'rxjs/operators';
 import { homeBlockAnimation } from '../../common/animations/homeBlock.animation';
 
 @Component({
@@ -19,40 +19,24 @@ export class HomeBlockComponent implements OnInit {
     data: any = [];
     totalData: any;
     constructor(
-        private dataservice : DataService,
-        private firebaseService: FirebaseService
-        ) {
-        // this.totalData = dataservice.getDataFromJson();
-    }
+        private dataService : DataService
+    ) { }
 
     ngOnInit() {
-        this.dataGotedFromServer(this.page);
+        this.fetchData(this.page);
     }
-    dataGotedFromServer(page) {
-        // try {
-        //   this.dataservice.getDataFromJson(page)
-        //     .subscribe(resp => {
-        //       this.data = resp;
-        //       console.log(resp);
-        //     },
-        //       error => {
-        //         console.log(error, "error");
-        //       })
-        // } catch (e) {
-        //   console.log(e);
-        // }
-        try {
-            this.firebaseService.getData(page)
-                .valueChanges()
-                .subscribe(resData => {
-                    console.log(resData);
-                    this.data = resData.data;
-                },
-                error => {
-                  console.log(error, "error");
-                })
-          } catch (e) {
-            console.log(e);
-          }
+    fetchData(pageTitle) {
+      try {
+        this.dataService.getDataFromJson(pageTitle).pipe(
+          map(res => res[0].home)
+        ).subscribe(resData => {
+          this.data = resData.data;
+        },
+        error => {
+          console.log(error, "error");
+        });
+      } catch (e) {
+        console.log(e);
+      }
     }
 }

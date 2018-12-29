@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { FirebaseService } from '../../common/services/firebase.service';
+import { DataService } from '../../common/services/data.service';
+import { map } from 'rxjs/operators';
 import { homeBlockContentAnimation } from '../../common/animations/homeBlockContent.animation';
 
 @Component({
@@ -26,34 +27,35 @@ export class HomeBlockContentComponent implements OnInit {
 
     constructor(
         private route: ActivatedRoute,
-        private firebaseService: FirebaseService) { }
+        private dataService : DataService
+    ) { }
 
     ngOnInit() {
-        try {
-            this.firebaseService.getData(this.page)
-                .valueChanges()
-                .subscribe(resData => {
-                    console.log(resData);
-                    this.data = resData.data;
-                    this.route.params.subscribe(params => {
-                        let id = params['id'];
-                        let hContent = this.data.filter(element => element.id == id);
-                        this.content = hContent[0].content;
-                        this.color = hContent[0].color;
-                        this.image = hContent[0].image;
-                        this.title = hContent[0].title;
-                        this.subContent = hContent[0].subContent;
-                        this.subImage = hContent[0].subImage;
-                        this.blocks = hContent[0].blocks;
-                    });
-                },
-                error => {
-                  console.log(error, "error");
-                })
-        } catch (e) {
-            console.log(e);
-        }
-
-
+        this.fetchData(this.page);
+    }
+    fetchData(pageTitle) {
+      try {
+        this.dataService.getDataFromJson(pageTitle).pipe(
+          map(res => res[0].home)
+        ).subscribe(resData => {
+          this.data = resData.data;
+          this.route.params.subscribe(params => {
+              let id = params['id'];
+              let hContent = this.data.filter(element => element.id == id);
+              this.content = hContent[0].content;
+              this.color = hContent[0].color;
+              this.image = hContent[0].image;
+              this.title = hContent[0].title;
+              this.subContent = hContent[0].subContent;
+              this.subImage = hContent[0].subImage;
+              this.blocks = hContent[0].blocks;
+          });
+        },
+        error => {
+          console.log(error, "error");
+        });
+      } catch (e) {
+        console.log(e);
+      }
     }
 }

@@ -1,8 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { Location } from '@angular/common';
+import { map } from 'rxjs/operators';
 import { FormGroup, FormControl, FormBuilder, Validators } from '@angular/forms';
-import { FirebaseService } from '../../common/services/firebase.service';
+import { DataService } from '../../common/services/data.service';
 import { ContactAnimation } from '../../common/animations/contact.animation';
+// import { EmailsendService } from '../../common/services/emailsend.service';
 
 @Component({
     selector: 'app-contact',
@@ -16,7 +18,7 @@ import { ContactAnimation } from '../../common/animations/contact.animation';
 
 export class ContactComponent implements OnInit {
     titlemessage : string = "Contact Us";
-    lowerCaseTile: string = "contact";
+    lowerCaseTitle: string = "contact";
     address: string;
     contact_designation: string;
     contact_name: string;
@@ -37,13 +39,19 @@ export class ContactComponent implements OnInit {
       feedbackComment: [''],
     });
 
+    // feedBackSubmit() {
+    //   console.warn(this.feedbackForm.value);
+    //   this.emailsend.addEmail(this.feedbackForm.value);
+    // }
+
     constructor(
       private location: Location,
       private fb: FormBuilder,
-      private firebaseService: FirebaseService) { }
+      // private emailsend: EmailsendService,
+      private dataService : DataService) { }
 
     ngOnInit() {
-        this.dataGotedFromServer(this.lowerCaseTile);
+        this.fetchGalleryData(this.lowerCaseTitle)
 
         this.myStyle = {
           'position': 'fixed',
@@ -73,24 +81,24 @@ export class ContactComponent implements OnInit {
     cancelContact() {
         this.location.back();
     }
-    dataGotedFromServer(lowerCaseTile) {
-        try {
-            this.firebaseService.getData(lowerCaseTile)
-                .valueChanges()
-                .subscribe(resData => {
-                    this.address = resData.address;
-                    this.contact_designation= resData.contact_designation;
-                    this.contact_name= resData.contact_name;
-                    this.contact_officer_designation= resData.contact_officer_designation;
-                    this.contact_officer_number= resData.contact_officer_number;
-                    this.contact_email= resData.contact_email;
-                    this.contact_number= resData.contact_number;
-                },
-                error => {
-                  console.log(error, "error");
-                })
-          } catch (e) {
-            console.log(e);
-          }
+    fetchGalleryData(pageTitle) {
+      try {
+        this.dataService.getDataFromJson(pageTitle).pipe(
+          map(res => res[0].contact)
+        ).subscribe(resData => {
+          this.address = resData.address;
+          this.contact_designation= resData.contact_designation;
+          this.contact_name= resData.contact_name;
+          this.contact_officer_designation= resData.contact_officer_designation;
+          this.contact_officer_number= resData.contact_officer_number;
+          this.contact_email= resData.contact_email;
+          this.contact_number= resData.contact_number;
+        },
+        error => {
+          console.log(error, "error");
+        });
+      } catch (e) {
+        console.log(e);
+      }
     }
 }
