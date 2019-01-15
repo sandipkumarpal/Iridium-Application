@@ -11,17 +11,25 @@
               <div class="container-feedback__block">
                   <form [formGroup]="feedbackForm" (ngSubmit)="feedBackSubmit()">
                       <div class="input-field">
-                          <input id="name" name="feedbackName" type="text" class="validate" [(ngModel)]="feedbackName" formControlName="feedbackName" required>
+                          <input id="name" name="customername" type="text" class="validate" [(ngModel)]="customername" formControlName="customername" required>
                           <label for="name">Name *</label>
-                          <span data-error="wrong" *ngIf="!feedbackForm.controls['feedbackName'].valid && feedbackForm.controls['feedbackName'].touched" class="helper-text alert alert-danger">Please type your name</span>
+                          <div data-error="wrong" *ngIf="!feedbackForm.controls['customername'].valid && (feedbackForm.controls['customername'].dirty || feedbackForm.controls['customername'].touched)" class="helper-text alert alert-danger">
+                              <div *ngIf="feedbackForm.controls['customername'].errors.required">
+                                  Name is required.
+                                </div>
+                          </div>
                       </div>
                       <div class="input-field">
-                          <input id="email" type="email" name="feedbackEmail" class="validate" [(ngModel)]="feedbackEmail" formControlName="feedbackEmail" required>
+                          <input id="email" type="email" name="customeremail" class="validate" [(ngModel)]="customeremail" formControlName="customeremail" required>
                           <label for="email">Email: *</label>
-                          <span data-error="wrong" *ngIf="!feedbackForm.controls['feedbackEmail'].valid && feedbackForm.controls['feedbackEmail'].touched" class="helper-text alert alert-danger">Please type your valid Email Id</span>
+                          <div data-error="wrong" *ngIf="!feedbackForm.controls['customeremail'].valid && (feedbackForm.controls['customeremail'].dirty || feedbackForm.controls['customeremail'].touched)" class="helper-text alert alert-danger">
+                              <div *ngIf="feedbackForm.controls['customeremail'].errors.required">
+                                  Please type your valid Email Id
+                                </div>
+                          </div>
                       </div>
                       <div class="input-field">
-                          <textarea id="comment" name="feedbackComment" class="materialize-textarea" [(ngModel)]="feedbackComment" formControlName="feedbackComment"></textarea>
+                          <textarea id="comment" name="customermessage" class="materialize-textarea" [(ngModel)]="customermessage" formControlName="customermessage"></textarea>
                           <label for="comment">Comment</label>
                       </div>
                       <div class="input-button">

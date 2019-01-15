@@ -9,6 +9,7 @@ import { LightboxModule } from '@ngx-gallery/lightbox';
 import { ParticlesModule } from 'angular-particle';
 import { ParticleEffectButtonModule } from "angular-particle-effect-button";
 import { HttpClientModule } from '@angular/common/http';
+import { HttpModule } from '@angular/http';
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
 
@@ -62,6 +63,8 @@ import { SoundComponent } from './components/sound/sound.component';
   ],
   imports: [
     BrowserModule,
+    FormsModule,
+    HttpModule,
     HttpClientModule,
     BrowserAnimationsModule,
     GalleryModule.forRoot(),
@@ -71,7 +74,6 @@ import { SoundComponent } from './components/sound/sound.component';
     ParticleEffectButtonModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireDatabaseModule,
-    FormsModule,
     ReactiveFormsModule,
     RouterModule.forRoot([
       { path: '', component: HomeComponent, data: { state: 'home'} },

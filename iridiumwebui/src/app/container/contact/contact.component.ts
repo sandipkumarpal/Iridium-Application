@@ -4,7 +4,7 @@ import { map } from 'rxjs/operators';
 import { FormGroup, FormControl, FormBuilder, Validators } from '@angular/forms';
 import { DataService } from '../../common/services/data.service';
 import { ContactAnimation } from '../../common/animations/contact.animation';
-// import { EmailsendService } from '../../common/services/emailsend.service';
+import { EmailsendService } from '../../common/services/emailsend.service';
 
 @Component({
     selector: 'app-contact',
@@ -27,6 +27,8 @@ export class ContactComponent implements OnInit {
     contact_email: any[];
     contact_number: any[];
     numbers: any;
+    feedBackSubmitted = false;
+    feedBackError= false;
 
     myStyle: object = {};
     myParams: object = {};
@@ -34,24 +36,38 @@ export class ContactComponent implements OnInit {
     height: number = 100;
 
     feedbackForm = this.fb.group({
-      feedbackName: ['', Validators.required],
-      feedbackEmail: ['', [Validators.required, Validators.email]],
-      feedbackComment: [''],
+      customername: ['', Validators.required],
+      customeremail: ['', [Validators.required, Validators.email]],
+      customermessage: [''],
     });
 
-    // feedBackSubmit() {
-    //   console.warn(this.feedbackForm.value);
-    //   this.emailsend.addEmail(this.feedbackForm.value);
-    // }
+    feedBackSubmit() {
+      this.feedBackSubmitted = true;
+      if (this.feedbackForm.invalid) {
+        this.feedBackError = true;
+        return;
+      } else {
+        this.feedBackError = false;
+        console.warn('Data', this.feedbackForm.value);
+        this.emailsend.addEmail(this.feedbackForm.value).subscribe(
+          data => {
+            console.log('Success!', data);
+          },
+          error => console.log('Error!', error)
+        );
+        this.feedbackForm.reset();
+      }
+    }
 
     constructor(
       private location: Location,
       private fb: FormBuilder,
-      // private emailsend: EmailsendService,
+      private emailsend: EmailsendService,
       private dataService : DataService) { }
 
     ngOnInit() {
-        this.fetchGalleryData(this.lowerCaseTitle)
+        this.fetchGalleryData(this.lowerCaseTitle);
+        this.feedBackSubmit();
 
         this.myStyle = {
           'position': 'fixed',
