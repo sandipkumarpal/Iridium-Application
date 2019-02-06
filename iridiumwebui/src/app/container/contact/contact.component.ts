@@ -5,6 +5,7 @@ import { FormGroup, FormControl, FormBuilder, Validators } from '@angular/forms'
 import { DataService } from '../../common/services/data.service';
 import { ContactAnimation } from '../../common/animations/contact.animation';
 import { EmailsendService } from '../../common/services/emailsend.service';
+import { ContactsendService } from '../../common/services/contactsend.service';
 
 @Component({
     selector: 'app-contact',
@@ -29,6 +30,8 @@ export class ContactComponent implements OnInit {
     numbers: any;
     feedBackSubmitted = false;
     feedBackError= false;
+    contactSubmitted = false;
+    contactError= false;
 
     myStyle: object = {};
     myParams: object = {};
@@ -39,6 +42,17 @@ export class ContactComponent implements OnInit {
       customername: ['', Validators.required],
       customeremail: ['', [Validators.required, Validators.email]],
       customermessage: [''],
+    });
+
+    contactForm = this.fb.group({
+      customer_name: ['', Validators.required],
+      customer_email: ['', [Validators.required, Validators.email]],
+      product_details: ['', Validators.required],
+      product_weight: ['', Validators.required],
+      product_function: ['', Validators.required],
+      customer_phone: ['', Validators.required],
+      customer_city: ['', Validators.required],
+      customer_message: [''],
     });
 
     feedBackSubmit() {
@@ -59,15 +73,35 @@ export class ContactComponent implements OnInit {
       }
     }
 
+    contactSubmit() {
+      this.contactSubmitted = true;
+      if(this.contactForm.invalid) {
+        this.contactError = true;
+        return;
+      } else {
+        this.contactError = false;
+        console.log('Data', this.contactForm.value);
+        this.contactsend.addContactEmail(this.contactForm.value).subscribe(
+          data => {
+            console.log('Success!', data);
+          },
+          error => console.log('Error!', error)
+        );
+        this.contactForm.reset();
+      }
+    }
+
     constructor(
       private location: Location,
       private fb: FormBuilder,
       private emailsend: EmailsendService,
+      private contactsend: ContactsendService,
       private dataService : DataService) { }
 
     ngOnInit() {
         this.fetchGalleryData(this.lowerCaseTitle);
         this.feedBackSubmit();
+        this.contactSubmit();
 
         this.myStyle = {
           'position': 'fixed',

@@ -34,6 +34,7 @@ import { HomeBlockContentComponent } from './container/homeBlockContent/homeBloc
 import { DataService } from './common/services/data.service';
 import { FirebaseService } from './common/services/firebase.service';
 import { EmailsendService } from './common/services/emailsend.service';
+import { ContactsendService } from './common/services/contactsend.service';
 import { environment } from '../environments/environment';
 import { FooterComponent } from './components/footer/footer.component';
 import { SoundComponent } from './components/sound/sound.component';
@@ -89,7 +90,7 @@ import { SoundComponent } from './components/sound/sound.component';
   entryComponents: [
     HomeComponent,
   ],
-  providers: [DataService, FirebaseService, EmailsendService],
+  providers: [DataService, FirebaseService, EmailsendService, ContactsendService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -45,41 +45,76 @@
           <h2 class="contact-title">{{titlemessage}} <a (click)="cancelContact()" class="back_btn">Back
               <svg role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512" class="svg-inline--fa fa-angle-right fa-w-8 fa-2x"><path fill="currentColor" d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z" class=""></path></svg>
         </a></h2>
-          <form action="" method="post" enctype="multipart/form-data" name="f1" onsubmit="return">
+          <form [formGroup]="contactForm" (ngSubmit)="contactSubmit()">
             <div class="input-field">
-              <input id="first_name" type="text" class="validate">
-              <label for="first_name">Name *</label>
+              <input id="fullName" name="customer_name" type="text" class="validate" [(ngModel)]="customer_name" formControlName="customer_name" required>
+              <label for="fullName">Name *</label>
+              <div data-error="wrong" *ngIf="!contactForm.controls['customer_name'].valid && (contactForm.controls['customer_name'].dirty || contactForm.controls['customer_name'].touched)" class="helper-text alert alert-danger">
+                <div *ngIf="contactForm.controls['customer_name'].errors.required">
+                    Enter your full name is required.
+                  </div>
+              </div>
             </div>
             <div class="input-field">
-              <input id="description" type="text" class="validate">
+              <input id="description" class="validate" type="text" name="product_details" formControlName="product_details" [(ngModel)]="product_details" required>
               <label for="description">Description of product : *</label>
+              <div data-error="wrong" *ngIf="!contactForm.controls['product_details'].valid && (contactForm.controls['product_details'].dirty || contactForm.controls['product_details'].touched)" class="helper-text alert alert-danger">
+                <div *ngIf="contactForm.controls['product_details'].errors.required">
+                    Product description is required.
+                  </div>
+              </div>
             </div>
             <div class="input-field">
-              <input id="weight" type="text" class="validate">
+              <input id="weight" class="validate" type="text" name="product_weight" formControlName="product_weight" [(ngModel)]="product_weight" required>
               <label for="weight">Weight of the product : *</label>
+              <div data-error="wrong" *ngIf="!contactForm.controls['product_weight'].valid && (contactForm.controls['product_weight'].dirty || contactForm.controls['product_weight'].touched)" class="helper-text alert alert-danger">
+                <div *ngIf="contactForm.controls['product_weight'].errors.required">
+                    Product weight is required.
+                  </div>
+              </div>
             </div>
             <div class="input-field">
-              <input id="function" type="text" class="validate">
+              <input id="function" type="text" class="validate" name="product_function" formControlName="product_function" [(ngModel)]="product_function" required>
               <label for="function">Function of the product: *</label>
+              <div data-error="wrong" *ngIf="!contactForm.controls['product_function'].valid && (contactForm.controls['product_function'].dirty || contactForm.controls['product_function'].touched)" class="helper-text alert alert-danger">
+                <div *ngIf="contactForm.controls['product_function'].errors.required">
+                    Product function is required.
+                  </div>
+              </div>
             </div>
             <div class="input-field">
-              <input id="email" type="email" class="validate">
+              <input id="email" type="email" class="validate" name="customer_email" formControlName="customer_email" [(ngModel)]="customer_email" required>
               <label for="email">Email: *</label>
+              <div data-error="wrong" *ngIf="!contactForm.controls['customer_email'].valid && (contactForm.controls['customer_email'].dirty || contactForm.controls['customer_email'].touched)" class="helper-text alert alert-danger">
+                <div *ngIf="contactForm.controls['customer_email'].errors.required">
+                    Email is required.
+                  </div>
+              </div>
             </div>
             <div class="input-field">
-              <input id="phone" type="tel" class="validate">
+              <input id="phone" type="tel" class="validate" name="customer_phone" formControlName="customer_phone" [(ngModel)]="customer_phone" required>
               <label for="phone">Phone: *</label>
+              <div data-error="wrong" *ngIf="!contactForm.controls['customer_phone'].valid && (contactForm.controls['customer_phone'].dirty || contactForm.controls['customer_phone'].touched)" class="helper-text alert alert-danger">
+                <div *ngIf="contactForm.controls['customer_phone'].errors.required">
+                    Phone number is required.
+                  </div>
+              </div>
             </div>
             <div class="input-field">
-              <input id="city" type="text" class="validate">
+              <input id="city" type="text" class="validate" name="customer_city" formControlName="customer_city" [(ngModel)]="customer_city" required>
               <label for="city">City: *</label>
+              <div data-error="wrong" *ngIf="!contactForm.controls['customer_city'].valid && (contactForm.controls['customer_city'].dirty || contactForm.controls['customer_city'].touched)" class="helper-text alert alert-danger">
+                <div *ngIf="contactForm.controls['customer_city'].errors.required">
+                    City is required.
+                  </div>
+              </div>
             </div>
             <div class="input-field">
-              <textarea id="comment" name="comment" class="materialize-textarea"></textarea>
-              <label for="comment">Message :</label>
+              <textarea id="customercomment" class="materialize-textarea" name="customer_message" formControlName="customer_message" [(ngModel)]="customer_message"></textarea>
+              <label for="customercomment">Message :</label>
             </div>
             <div class="input-field">
-              <input type="button" value="Submit" class="btn btn-large btn__submit btn-block">
+              <input type="button" value="Submit" class="btn btn-large btn__submit btn-block" (click)="contactSubmit()">
             </div>
           </form>
           <div class="address__area">
